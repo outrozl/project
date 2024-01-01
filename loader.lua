@@ -4,7 +4,8 @@
 local games = {
     [{2753915549, 4442272183, 7449423635}] = "https://raw.githubusercontent.com/outrozl/project/main/scripts/bf.lua",
     [{142823291}] = "https://raw.githubusercontent.com/outrozl/project/main/scripts/mm2.lua",
-    [{3101667897}] = "https://raw.githubusercontent.com/outrozl/project/main/scripts/los.lua"
+    [{3101667897}] = "https://raw.githubusercontent.com/outrozl/project/main/scripts/los.lua",
+    [{13772394625}] = "https://raw.githubusercontent.com/outrozl/project/main/scripts/BB.lua"
 }
 
 for ids, url in next, games do
