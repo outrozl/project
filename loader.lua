@@ -18,7 +18,7 @@ for ids, url in next, games do
   game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Comprobando ID:",
     Text = tostring(ids),
-    Duration = 2
+    Duration = 1
   })
 
   if table.find(ids, game.PlaceId) then
@@ -28,7 +28,7 @@ for ids, url in next, games do
     game:GetService("StarterGui"):SetCore("SendNotification", {
       Title = "Error!",
       Text = "El juego que estas jugando no se ha encontrado en nuestro sistema",
-      Duration = 4,
+      Duration = 10,
       Icon = "rbxassetid://1234567890"
     })
   end
