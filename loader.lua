@@ -18,7 +18,7 @@ for ids, url in next, games do
       Title = "Error!",
       Text = "El juego que estas jugando no se ha encontrado en nuestro sistema",
       Duration = 10,
-      Icon = "rbxassetid://1234567890"
+      Icon = "rbxassetid://13499341131"
     })
   end
 end
