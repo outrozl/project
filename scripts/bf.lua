@@ -1,9 +1,5 @@
 ---------------------- [Blox Fruits] ---------------------- 
 
------------ [LOCALS] -----------
-
-local pl = game.Players.LocalPlayer.Name
-
 ----------- [FUNCTIONS] -----------
 
 function Callback(answer)
