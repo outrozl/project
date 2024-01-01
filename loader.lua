@@ -12,13 +12,6 @@ for ids, url in next, games do
   if table.find(ids, game.PlaceId) then
     loadstring(game:HttpGet(url))()
     break
-  else
-    game:GetService("StarterGui"):SetCore("SendNotification",{
-	     Title = "Error!", -- Required
-	     Text = "El juego que estas jugando no see ha encontrado en nuestro sistema", -- Required
-             Duration = 4
-	     Icon = "rbxassetid://1234567890" -- Optional
-    })
   end
 end
 
