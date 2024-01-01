@@ -16,7 +16,7 @@ for ids, url in next, games do
     game:GetService("StarterGui"):SetCore("SendNotification",{
 	     Title = "Error!", -- Required
 	     Text = "El juego que estas jugando no see ha encontrado en nuestro sistema", -- Required
-       Duration = 4
+             Duration = 4
 	     Icon = "rbxassetid://1234567890" -- Optional
     })
   end
