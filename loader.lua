@@ -8,18 +8,7 @@ local games = {
   [{13772394625}] = "https://raw.githubusercontent.com/outrozl/project/main/scripts/BB.lua"
 }
 
-game:GetService("StarterGui"):SetCore("SendNotification", {
-  Title = "Iniciando búsqueda de juego...",
-  Text = "Buscando tu juego",
-  Duration = 1
-})
-
 for ids, url in next, games do
-  game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Comprobando ID:",
-    Text = tostring(ids),
-    Duration = 1
-  })
 
   if table.find(ids, game.PlaceId) then
     loadstring(game:HttpGet(url))()
