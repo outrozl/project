@@ -137,7 +137,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     scrollingFrame.Size = UDim2.new(0.2, 0, 0.9, 0) -- Mismo ancho que tabsHolder
     scrollingFrame.Position = UDim2.new(0, 0, 0.1, 0) -- Posición alineada con tabsHolder
     scrollingFrame.ScrollBarThickness = 10
-    scrollingFrame.Parent = mainFrame
+    scrollingFrame.Parent = tabsHolder
 
     local uiListLayout = Instance.new("UIListLayout")
     uiListLayout.Padding = UDim.new(0, 2)
