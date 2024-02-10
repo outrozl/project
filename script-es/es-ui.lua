@@ -4,7 +4,7 @@ local NevLib = {}
 function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     -- Verificar si se debe eliminar la ventana anterior
     if deleteprevius then
-        local existingGui = game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("WindowGui")
+        local existingGui = game.Players.LocalPlayer:FindFirstChild("PlayerGui"):FindFirstChild("WindowGui")
         if existingGui then
             existingGui:Destroy()
         end
@@ -14,7 +14,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     local screenGui = Instance.new("ScreenGui")
     screenGui.Name = "WindowGui"
     screenGui.IgnoreGuiInset = true
-    screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    screenGui.Parent = game.Players.LocalPlayer:FindFirstChild("PlayerGui")
 
     -- Crear un Frame principal
     local mainFrame = Instance.new("Frame")
@@ -66,6 +66,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     local topBar = Instance.new("Frame")
     topBar.Name = "TopBar"
     topBar.Size = UDim2.new(1, 0, 0.1, 0)
+    topBar.Position = UDim2.new(0, 0, 0, 0)  -- Asegúrate de que esté en la parte superior
     topBar.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     topBar.BorderSizePixel = 0  -- Eliminar el borde del frame
     topBar.Parent = mainFrame
@@ -104,7 +105,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         openFrame.Position = UDim2.new(0.5, -15, 0, 10)
         openFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
         openFrame.BorderSizePixel = 0  -- Eliminar el borde del frame
-        openFrame.Parent = mainFrame
+        openFrame.Parent = screenGui
 
         -- Agregar UICorner a openFrame
         local openFrameCorner = Instance.new("UICorner")
