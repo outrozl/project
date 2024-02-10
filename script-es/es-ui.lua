@@ -107,6 +107,11 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         openFrame.BorderSizePixel = 0  -- Eliminar el borde del frame
         openFrame.Parent = screenGui
 
+        -- Aplicar UI Corner a openFrame
+        local openFrameCorner = Instance.new("UICorner")
+        openFrameCorner.CornerRadius = UDim.new(0, 5)
+        openFrameCorner.Parent = openFrame
+
         local openButton = Instance.new("ImageButton")
         openButton.Name = "OpenButton"
         openButton.Size = UDim2.new(1, 0, 1, 0)
@@ -123,7 +128,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     local tabsHolder = Instance.new("Frame")
     tabsHolder.Name = "TabsHolder"
     tabsHolder.Size = UDim2.new(0.25, 0, 1, 0)  -- Ajustar el tamaño para cubrir toda la altura del mainFrame
-    tabsHolder.Position = UDim2.new(0, 0, 0, 0)  -- Ajustar la posición para alinear con el borde izquierdo del mainFrame
+    tabsHolder.Position = UDim2.new(0, 0, 0, topBar.Size.Y.Offset)  -- Ajustar la posición para estar debajo de TopBar
     tabsHolder.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
     tabsHolder.Parent = mainFrame
 
