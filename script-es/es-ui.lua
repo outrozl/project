@@ -1,7 +1,7 @@
 local NevLib = {}
 
 -- Función para crear una ventana
-function NevLib.CreateWindow(title, icon)
+function NevLib.CreateWindow(title, mobile, icon)
     -- Crear una ScreenGui
     local screenGui = Instance.new("ScreenGui")
     screenGui.Name = "WindowGui"
