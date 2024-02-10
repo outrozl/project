@@ -1,12 +1,10 @@
 local NevLib = {}
 
 -- Función para crear una ventana
-function NevLib.CreateWindow(title, mobile, icon)
-    -- Verificar si se debe eliminar la ventana anterior
-
+function NevLib.CreateWindow(title, icon)
     -- Crear una ScreenGui
     local screenGui = Instance.new("ScreenGui")
-    screenGui.Name = "NevLibGuixd"
+    screenGui.Name = "WindowGui"
     screenGui.IgnoreGuiInset = true
     screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
@@ -74,22 +72,6 @@ function NevLib.CreateWindow(title, mobile, icon)
     titleLabel.Font = Enum.Font.SourceSansBold
     titleLabel.TextXAlignment = Enum.TextXAlignment.Left
     titleLabel.Parent = topBar
-
-    -- Si es mobile, agregar un botón para abrir el Frame principal
-    if mobile then
-        local openButton = Instance.new("TextButton")
-        openButton.Name = "OpenButton"
-        openButton.Size = UDim2.new(0, 100, 0, 50)
-        openButton.Position = UDim2.new(0.5, -50, 0, 10)
-        openButton.BackgroundColor3 = Color3.fromRGB(0, 120, 215) -- Color azul
-        openButton.Text = "Abrir"
-        openButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-        openButton.Parent = screenGui
-
-        openButton.MouseButton1Click:Connect(function()
-            mainFrame.Visible = not mainFrame.Visible
-        end)
-    end
 
     return mainFrame
 end
