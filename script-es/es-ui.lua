@@ -104,7 +104,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         openFrame.Position = UDim2.new(0.5, -15, 0, 10)
         openFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
         openFrame.BorderSizePixel = 0  -- Eliminar el borde del frame
-        openFrame.Parent = screenGui
+        openFrame.Parent = mainFrame
 
         -- Agregar UICorner a openFrame
         local openFrameCorner = Instance.new("UICorner")
@@ -114,7 +114,6 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         local openButton = Instance.new("ImageButton")
         openButton.Name = "OpenButton"
         openButton.Size = UDim2.new(1, 0, 1, 0)
-        openButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         openButton.BackgroundTransparency = 1
         openButton.Image = icon
         openButton.Parent = openFrame
