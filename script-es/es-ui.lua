@@ -100,4 +100,22 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     return mainFrame
 end
 
+-- Función para verificar si la ventana está corriendo
+function NevLib:IsRunning()
+    -- Verificar si se debe eliminar la ventana anterior
+    local deleteprevius = true
+    if deleteprevius then
+        local existingGui = game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("WindowGui")
+        if existingGui then
+            existingGui:Destroy()
+        end
+    end
+
+    -- Obtener el padre de la GUI de NevLib
+    local parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+    -- Comprobar si la ventana de NevLib está siendo ejecutada en el padre adecuado
+    return parent:FindFirstChild("WindowGui") ~= nil
+end
+
 return NevLib
