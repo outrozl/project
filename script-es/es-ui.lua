@@ -98,7 +98,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         openButton.Image = icon
         openButton.Parent = openFrame
 
-        openButton.MouseButton1Click:Connect(function()
+        openButton.MouseButton1Up:Connect(function()
             mainFrame.Visible = not mainFrame.Visible
         end)
     end
