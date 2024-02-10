@@ -92,7 +92,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         openButton.TextColor3 = Color3.fromRGB(255, 255, 255)
         openButton.Parent = screenGui
 
-        openButton.MouseButton1Click:Connect(function()
+        openButton.MouseButton1Up:Connect(function()
             mainFrame.Visible = not mainFrame.Visible
         end)
     end
