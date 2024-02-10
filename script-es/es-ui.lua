@@ -81,41 +81,29 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     titleLabel.TextXAlignment = Enum.TextXAlignment.Left
     titleLabel.Parent = topBar
 
-    -- Si es mobile, agregar un botón para abrir el Frame principal
+    -- Si es mobile, agregar un Frame con un ImageButton para abrir el Frame principal
     if mobile then
-        local openButton = Instance.new("TextButton")
-        openButton.Name = "OpenButton"
-        openButton.Size = UDim2.new(0, 100, 0, 50)
-        openButton.Position = UDim2.new(0.5, -50, 0, 10)
-        openButton.BackgroundColor3 = Color3.fromRGB(0, 120, 215) -- Color azul
-        openButton.Text = "Abrir"
-        openButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-        openButton.Parent = screenGui
+        local openFrame = Instance.new("Frame")
+        openFrame.Name = "OpenFrame"
+        openFrame.Size = UDim2.new(0, 30, 0, 30)
+        openFrame.Position = UDim2.new(0.5, -15, 0, 10)
+        openFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+        openFrame.Parent = screenGui
 
-        openButton.MouseButton1Up:Connect(function()
+        local openButton = Instance.new("ImageButton")
+        openButton.Name = "OpenButton"
+        openButton.Size = UDim2.new(1, 0, 1, 0)
+        openButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        openButton.BackgroundTransparency = 1
+        openButton.Image = icon
+        openButton.Parent = openFrame
+
+        openButton.MouseButton1Click:Connect(function()
             mainFrame.Visible = not mainFrame.Visible
         end)
     end
 
     return mainFrame
-end
-
--- Función para verificar si la ventana está corriendo
-function NevLib:IsRunning()
-    -- Verificar si se debe eliminar la ventana anterior
-    local deleteprevius = true
-    if deleteprevius then
-        local existingGui = game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("WindowGui")
-        if existingGui then
-            existingGui:Destroy()
-        end
-    end
-
-    -- Obtener el padre de la GUI de NevLib
-    local parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
-    -- Comprobar si la ventana de NevLib está siendo ejecutada en el padre adecuado
-    return parent:FindFirstChild("WindowGui") ~= nil
 end
 
 return NevLib
