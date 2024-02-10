@@ -22,6 +22,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     mainFrame.Size = UDim2.new(0.5, 0, 0.5, 0)
     mainFrame.Position = UDim2.new(0.25, 0, 0.25, 0)
     mainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    mainFrame.BorderSizePixel = 0  -- Eliminar el borde del frame
     mainFrame.Parent = screenGui
 
     -- Función para hacer que el Frame principal sea arrastrable
@@ -102,6 +103,11 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
             mainFrame.Visible = not mainFrame.Visible
         end)
     end
+
+    -- Agregar UICorner a los elementos Frame
+    local uiCorner = Instance.new("UICorner")
+    uiCorner.CornerRadius = UDim.new(0, 5)
+    uiCorner.Parent = mainFrame
 
     return mainFrame
 end
