@@ -128,7 +128,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     local tabsHolder = Instance.new("Frame")
     tabsHolder.Name = "TabsHolder"
     tabsHolder.Size = UDim2.new(0.2, 0, 0.9, 0) -- Reducir el ancho
-    tabsHolder.Position = UDim2.new(0, 5, 0.1, 0) -- Posicionar a la izquierda
+    tabsHolder.Position = UDim2.new(0, 0, 0.1, 0) -- Posicionar a la izquierda
     tabsHolder.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
     tabsHolder.Parent = mainFrame
 
