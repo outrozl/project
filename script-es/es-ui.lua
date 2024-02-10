@@ -127,14 +127,14 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     -- Crear un Frame para los tabs y el scrolling frame
     local tabsHolder = Instance.new("Frame")
     tabsHolder.Name = "TabsHolder"
-    tabsHolder.Size = UDim2.new(0.25, 0, 1, 0)  -- Ajustar el tamaño para cubrir toda la altura del mainFrame
-    tabsHolder.Position = UDim2.new(0, 0, 0, topBar.Size.Y.Offset)  -- Ajustar la posición para estar debajo de TopBar
+    tabsHolder.Size = UDim2.new(0.25, 0, 1, -topBar.Size.Y.Offset)  -- Restar la altura de TopBar para ajustar su posición
+    tabsHolder.Position = UDim2.new(0, 0, 1, 0)  -- Ajustar la posición para estar debajo de TopBar
     tabsHolder.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
     tabsHolder.Parent = mainFrame
 
     local scrollingFrame = Instance.new("ScrollingFrame")
     scrollingFrame.Name = "ScrollingFrame"
-    scrollingFrame.Size = UDim2.new(1, 0, 1, -topBar.Size.Y.Offset)  -- Restar el tamaño de TopBar para evitar colisión
+    scrollingFrame.Size = UDim2.new(1, 0, 1, -topBar.Size.Y.Offset)  -- Restar la altura de TopBar para evitar colisión
     scrollingFrame.Position = UDim2.new(0, 0, 0, topBar.Size.Y.Offset)  -- Ajustar la posición para empezar desde debajo de TopBar
     scrollingFrame.ScrollBarThickness = 10
     scrollingFrame.Parent = tabsHolder
