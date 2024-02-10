@@ -19,7 +19,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     -- Crear un Frame principal
     local mainFrame = Instance.new("Frame")
     mainFrame.Name = "MainFrame"
-    mainFrame.Size = UDim2.new(0.5, 0, 0.5, 0)
+    mainFrame.Size = UDim2.new(0.5, 0, 0.5, -10) -- Restamos 10 para dejar espacio para la TopBar
     mainFrame.Position = UDim2.new(0.25, 0, 0.25, 0)
     mainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
     mainFrame.BorderSizePixel = 0  -- Eliminar el borde del frame
@@ -134,8 +134,8 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
 
     local scrollingFrame = Instance.new("ScrollingFrame")
     scrollingFrame.Name = "ScrollingFrame"
-    scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
-    scrollingFrame.Position = UDim2.new(0, 0, 0, 0)
+    scrollingFrame.Size = UDim2.new(1, 0, 1, -topBar.Size.Y.Offset)  -- Restar el tamaño de TopBar para evitar colisión
+    scrollingFrame.Position = UDim2.new(0, 0, 0, topBar.Size.Y.Offset)  -- Ajustar la posición para empezar desde debajo de TopBar
     scrollingFrame.ScrollBarThickness = 10
     scrollingFrame.Parent = tabsHolder
 
