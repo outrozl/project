@@ -67,7 +67,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     topBar.Name = "TopBar"
     topBar.Size = UDim2.new(1, 0, 0.1, 0)
     topBar.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    topbar.BorderSizePixel = 0
+    topBar.BorderSizePixel = 0  -- Eliminar el borde del frame
     topBar.Parent = mainFrame
 
     -- Agregar UICorner a topBar
@@ -80,7 +80,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     topBarBottomFrame.Size = UDim2.new(1, 0, 0.02, 0)
     topBarBottomFrame.Position = UDim2.new(0, 0, 1, 0)
     topBarBottomFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    topBarBottomFrame.BorderSizePixel = 0
+    topBarBottomFrame.BorderSizePixel = 0  -- Eliminar el borde del frame
     topBarBottomFrame.Parent = topBar
 
     -- Crear un Label para el título en la barra superior
@@ -103,7 +103,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         openFrame.Size = UDim2.new(0, 30, 0, 30)
         openFrame.Position = UDim2.new(0.5, -15, 0, 10)
         openFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-        openFrame.BorderSizePixel = 0
+        openFrame.BorderSizePixel = 0  -- Eliminar el borde del frame
         openFrame.Parent = screenGui
 
         -- Agregar UICorner a openFrame
