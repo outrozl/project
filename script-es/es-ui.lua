@@ -1,10 +1,14 @@
 local NevLib = {}
-print("NevLib: Este script usa la libreria de outrozl / just_nev_dev 👻")
+
 -- Función de ejemplo en la librería
 function NevLib.sayHello()
     print("¡Hola desde la librería!")
 end
 
--- Agrega más funciones aquí según tus necesidades
+-- Información del creador de la librería
+local creatorInfo = "Librería creada por just_nev_dev"
+
+-- Mandar un print con información del creador al crear la librería
+print(creatorInfo)
 
 return NevLib
