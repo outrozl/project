@@ -103,25 +103,6 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         end)
     end
 
-    -- Función para agregar UICorner a los elementos Frame
-    local function addUICornerToFrame(frame)
-        local uiCorner = Instance.new("UICorner")
-        uiCorner.CornerRadius = UDim.new(0, 5)
-        uiCorner.Parent = frame
-    end
-
-    -- Recorrer y agregar UICorner a los elementos Frame
-    local function addUICornerToFrames(element)
-        if element:IsA("Frame") and element.Name ~= "OpenFrame" then
-            addUICornerToFrame(element)
-        end
-        for _, child in ipairs(element:GetChildren()) do
-            addUICornerToFrames(child)
-        end
-    end
-
-    addUICornerToFrames(mainFrame)
-
     return mainFrame
 end
 
