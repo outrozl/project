@@ -25,6 +25,11 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     mainFrame.BorderSizePixel = 0  -- Eliminar el borde del frame
     mainFrame.Parent = screenGui
 
+    -- Aplicar UI Corner a mainFrame
+    local mainFrameCorner = Instance.new("UICorner")
+    mainFrameCorner.CornerRadius = UDim.new(0, 5)
+    mainFrameCorner.Parent = mainFrame
+
     -- Función para hacer que el Frame principal sea arrastrable
     local dragging
     local dragInput
