@@ -1,14 +1,8 @@
 local NevLib = {}
 
 -- Función para crear una ventana
-function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
+function NevLib.CreateWindow(title, mobile, icon)
     -- Verificar si se debe eliminar la ventana anterior
-    if deleteprevius then
-        local existingGui = game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("NevLibGuixd")
-        if existingGui then
-            existingGui:Destroy()
-        end
-    end
 
     -- Crear una ScreenGui
     local screenGui = Instance.new("ScreenGui")
