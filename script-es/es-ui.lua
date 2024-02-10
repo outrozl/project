@@ -71,11 +71,6 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     topBar.BorderSizePixel = 0  -- Eliminar el borde del frame
     topBar.Parent = mainFrame
 
-    -- Agregar UICorner a topBar
-    local topBarCorner = Instance.new("UICorner")
-    topBarCorner.CornerRadius = UDim.new(0, 5)
-    topBarCorner.Parent = topBar
-
     -- Crear un Frame adicional debajo de topBar para ocultar el UICorner
     local topBarBottomFrame = Instance.new("Frame")
     topBarBottomFrame.Size = UDim2.new(1, 0, 0.02, 0)
@@ -106,11 +101,6 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         openFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
         openFrame.BorderSizePixel = 0  -- Eliminar el borde del frame
         openFrame.Parent = screenGui
-
-        -- Agregar UICorner a openFrame
-        local openFrameCorner = Instance.new("UICorner")
-        openFrameCorner.CornerRadius = UDim.new(0, 5)
-        openFrameCorner.Parent = openFrame
 
         local openButton = Instance.new("ImageButton")
         openButton.Name = "OpenButton"
