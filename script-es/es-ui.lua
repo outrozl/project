@@ -122,8 +122,8 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     -- Crear un Frame para los tabs y el scrolling frame
     local tabsHolder = Instance.new("Frame")
     tabsHolder.Name = "TabsHolder"
-    tabsHolder.Size = UDim2.new(0.25, 0, 0.9, 0)
-    tabsHolder.Position = UDim2.new(0.75, 0, 0.1, 0)  -- Abajo a la derecha, debajo de la topBar
+    tabsHolder.Size = UDim2.new(0.25, 0, 1, 0)  -- Ajustar el tamaño para cubrir toda la altura del mainFrame
+    tabsHolder.Position = UDim2.new(0, 0, 0, 0)  -- Ajustar la posición para alinear con el borde izquierdo del mainFrame
     tabsHolder.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
     tabsHolder.Parent = mainFrame
 
