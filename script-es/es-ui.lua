@@ -69,6 +69,18 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
     topBar.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     topBar.Parent = mainFrame
 
+    -- Agregar UICorner a topBar
+    local topBarCorner = Instance.new("UICorner")
+    topBarCorner.CornerRadius = UDim.new(0, 5)
+    topBarCorner.Parent = topBar
+
+    -- Crear un Frame adicional debajo de topBar para ocultar el UICorner
+    local topBarBottomFrame = Instance.new("Frame")
+    topBarBottomFrame.Size = UDim2.new(1, 0, 0.02, 0)
+    topBarBottomFrame.Position = UDim2.new(0, 0, 1, 0)
+    topBarBottomFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    topBarBottomFrame.Parent = topBar
+
     -- Crear un Label para el título en la barra superior
     local titleLabel = Instance.new("TextLabel")
     titleLabel.Name = "TitleLabel"
@@ -91,6 +103,11 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         openFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
         openFrame.Parent = screenGui
 
+        -- Agregar UICorner a openFrame
+        local openFrameCorner = Instance.new("UICorner")
+        openFrameCorner.CornerRadius = UDim.new(0, 5)
+        openFrameCorner.Parent = openFrame
+
         local openButton = Instance.new("ImageButton")
         openButton.Name = "OpenButton"
         openButton.Size = UDim2.new(1, 0, 1, 0)
@@ -103,11 +120,6 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
             mainFrame.Visible = not mainFrame.Visible
         end)
     end
-
-    -- Agregar UICorner a los elementos Frame
-    local uiCorner = Instance.new("UICorner")
-    uiCorner.CornerRadius = UDim.new(0, 5)
-    uiCorner.Parent = mainFrame
 
     return mainFrame
 end
