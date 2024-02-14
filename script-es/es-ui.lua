@@ -1,6 +1,6 @@
 local Nevlibrary = {}
 
-local function MakeWindow(title, DeletePreviusly)
+function Nevlibrary.MakeWindow(title, DeletePreviusly)
     -- Eliminar la ventana anterior si es necesario
     if DeletePreviusly then
         local existingGui = game.Players.LocalPlayer:FindFirstChild("PlayerGui"):FindFirstChild("NevWindow")
@@ -71,4 +71,4 @@ local function MakeWindow(title, DeletePreviusly)
     return Main
 end
 
-return Nevlibrary()
+return Nevlibrary
