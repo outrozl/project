@@ -1,18 +1,37 @@
-local NevLib = {}
+local Nevlibrary = {}
 
--- Función para crear una ventana
-function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
-
-    --- IN DEV BUDDYS
-    -- Verificar si se debe eliminar la ventana anterior
-    if deleteprevius then
-        local existingGui = game.Players.LocalPlayer:FindFirstChild("PlayerGui"):FindFirstChild("WindowGui")
+function Nevlibrary.MakeWindow(Name, Icon, Mobile, Theme, DeletePreviusly)
+    if DeletePreviusly then
+        local existingGui = game.Players.LocalPlayer:FindFirstChild("PlayerGui"):FindFirstChild("NevWindow")
         if existingGui then
             existingGui:Destroy()
         end
     end
 
-    -- Función para hacer que el Frame principal sea arrastrable
+    local Red = {
+        ["BackgroundColor3"] = Color3.fromRGB(0, 0, 0),
+    }
+    
+    local NevWindow = Instance.new("ScreenGui")
+    NevWindow.Name = "NevWindow"
+    NevWindow.Parent = game.StarterGui.UI
+    NevWindow.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    NevWindow.ResetOnSpawn = false
+
+    local Main = Instance.new("Frame")
+    Main.Name = "Main"
+    Main.Parent = game.StarterGui.UI.NevWindow
+    Main.AnchorPoint = Vector2.new(0.5, 0.5)
+    Main.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Main.BorderSizePixel = 0
+    Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Main.Size = UDim2.new(0, 435, 0, 250)
+
+    local UICorner = Instance.new("UICorner")
+    UICorner.Parent = Main
+
+
     local dragging
     local dragInput
     local dragStart
@@ -20,14 +39,14 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
 
     local function update(input)
         local delta = input.Position - dragStart
-        mainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        Main.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
     end
 
-    mainFrame.InputBegan:Connect(function(input)
+    Main.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 then
             dragging = true
             dragStart = input.Position
-            startPos = mainFrame.Position
+            startPos = Main.Position
 
             input.Changed:Connect(function()
                 if input.UserInputState == Enum.UserInputState.End then
@@ -37,7 +56,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         end
     end)
 
-    mainFrame.InputChanged:Connect(function(input)
+    Main.InputChanged:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseMovement then
             dragInput = input
         end
@@ -49,7 +68,7 @@ function NevLib.CreateWindow(title, mobile, deleteprevius, icon)
         end
     end)
 
-    return mainFrame
+    return Main
 end
 
-return NevLib
+return Nevlibrary()
