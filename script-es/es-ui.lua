@@ -1,6 +1,7 @@
 local Nevlibrary = {}
 
-function Nevlibrary.MakeWindow(Name, Icon, Mobile, Theme, DeletePreviusly)
+local function MakeWindow(title, DeletePreviusly)
+    -- Eliminar la ventana anterior si es necesario
     if DeletePreviusly then
         local existingGui = game.Players.LocalPlayer:FindFirstChild("PlayerGui"):FindFirstChild("NevWindow")
         if existingGui then
@@ -8,19 +9,17 @@ function Nevlibrary.MakeWindow(Name, Icon, Mobile, Theme, DeletePreviusly)
         end
     end
 
-    local Red = {
-        ["BackgroundColor3"] = Color3.fromRGB(0, 0, 0),
-    }
-    
+    -- Crear un ScreenGui
     local NevWindow = Instance.new("ScreenGui")
     NevWindow.Name = "NevWindow"
-    NevWindow.Parent = game.StarterGui.UI
+    NevWindow.Parent = game.Players.LocalPlayer:FindFirstChild("PlayerGui")
     NevWindow.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     NevWindow.ResetOnSpawn = false
 
+    -- Crear un Frame principal
     local Main = Instance.new("Frame")
     Main.Name = "Main"
-    Main.Parent = game.StarterGui.UI.NevWindow
+    Main.Parent = NevWindow
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -28,10 +27,11 @@ function Nevlibrary.MakeWindow(Name, Icon, Mobile, Theme, DeletePreviusly)
     Main.Position = UDim2.new(0.5, 0, 0.5, 0)
     Main.Size = UDim2.new(0, 435, 0, 250)
 
+    -- Agregar un UICorner al Frame principal para suavizar las esquinas
     local UICorner = Instance.new("UICorner")
     UICorner.Parent = Main
 
-
+    -- Función para hacer que el Frame principal sea arrastrable
     local dragging
     local dragInput
     local dragStart
