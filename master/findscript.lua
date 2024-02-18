@@ -1,10 +1,11 @@
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+local NevVer = "PreRelease 1.0.9"
 
 local GUI = Mercury:Create{
-    Name = "Nev | Script Hub",
-    Size = UDim2.fromOffset(600, 400),
+    Name = "Nev | "..NevVer,
+    Size = UDim2.fromOffset(700, 500),
     Theme = Mercury.Themes.Dark,
-    Link = "https://github.com/outrozl"
+    Link = "https://github.com/outrozl/project/blob/main/master/FindScripts/"
 }
 
 -- Functions
@@ -24,7 +25,7 @@ local scripts = {
     ["CMD - X"] = { URL = "https://github.com/CMD-X/CMD-X/blob/master/Source?raw=true", Method = 3 },
     ["Orca"] = { URL = "https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua", Method = 2 },
     ["HoHo Hub V3"] = { URL = 'https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI', Method = 1 },
-    ["TigerAdmin"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 1 },
+    ["Tiger Admin"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 1 },
     ["Redzhub"] = { URL = "https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999", Method = 1 },
     ["Alchemy Hub"] = { URL = "https://alchemyhub.xyz/v2", Method = 1 },
     ["Dex Explorer"] = { URL = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", Method = 3 },
@@ -38,11 +39,32 @@ local scripts = {
     ["Wally Autoplayer"] = { URL = "https://github.com/Bart3kk/funky-friday-autoplay/blob/main/script.lua?raw=true", Method = 3 },
     ["Hoho Hub V2"] = { URL = "https://raw.githubusercontent.com/acsu123/HohoV2/main/OldScriptLoad", Method = 1 },
     ["Madox Hub"] = { URL = "https://raw.githubusercontent.com/Fiend1sh/FiendMain/main/MadoxHubKey", Method = 3 },
-    ["2x Hub"] = { URL = "https://raw.githubusercontent.com/armch063/BF-1XLIIHUB-V3/main/README.md", Method = 3 },
+    ["2x Hub"] = { URL = "https://raw.githubusercontent.com/armch063/BF-1XLIIHUB-V3/main/README.md", Method = 1 },
+    ["Speed Hub X"] = { URL = "https://github.com/ahmadsgamer2/Speed-Hub-X/blob/main/SpeedHubX", Method = 1 },
+    ["Unique Hub"] = { URL = "https://raw.githubusercontent.com/AkiraNus/UniquehubKak/main/FreeCr.Xenonhub", Method = 1 },
+    ["Chiba Hub"] = { URL = "https://raw.githubusercontent.com/ChibaHub/ChibaHub/main/ChibaHub.lua", Method = 1 },
+    ["Zaque Hub"] = { URL = "https://raw.githubusercontent.com/Mei2232/ZaqueHub/main/Zaque%20Hub", Method = 1 },
+    ["Glord Hub"] = { URL = "https://raw.githubusercontent.com/GGhostVN/GhostLord/main/BF", Method = 1 },
+    ["Blck Hub"] = { URL = "https://raw.githubusercontent.com/1f0yt/community/main/BLCK", Method = 1 },
+    ["Loli Hub"] = { URL = "https://raw.githubusercontent.com/1f0yt/community/main/neon", Method = 1 },
+    ["Alucard Hub"] = { URL = "https://raw.githubusercontent.com/JJTChannel/Alucard_hub/main/main.lua", Method = 1 },
+    ["Mukuru Hub"] = { URL = "https://raw.githubusercontent.com/xQuartyx/DonateMe/main/ScriptLoader", Method = 1 },
+    ["Zen Hub"] = { URL = "https://raw.githubusercontent.com/Kaizenofficiall/ZenHub/main/Loader", Method = 1 },
+    ["Ripper Hub"] = { URL = "https://raw.githubusercontent.com/xDestinyx/RipperHub/main/Loader.lua", Method = 1 },
+    ["Ren Hub"] = { URL = "https://raw.githubusercontent.com/UltraStuff/scripts2/main/ren", Method = 1 },
+    ["Void Hub"] = { URL = "https://raw.githubusercontent.com/Efe0626/VoidHub/main/Script", Method = 1 },
+    ["BlackTrap Gui"] = { URL = "https://gitlab.com/Sky2836/test/-/raw/main/Script_All_In-One", Method = 1 },
+    ["Destiny Hub"] = { URL = "https://raw.githubusercontent.com/KudoCon/DestinyHub/main/DestinyKey", Method = 1 },
+    ["Atomic Hub"] = { URL = "https://raw.githubusercontent.com/ArceusXHub/atomic-hub/main/atomic-hub.lua", Method = 1 },
+    ["Zamex Hub"] = { URL = "https://raw.githubusercontent.com/Sixnumz/ZamexMobile/main/Zamex_Mobile.lua", Method = 1 },
+    ["Saki Hub"] = { URL = "https://sharetext.me/raw/u3if6m3hgr", Method = 1 },
+    ["Fruit Finder (Blox Fruits)"] = { URL = "https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/BetaFruitFinder", Method = 1 },
+    ["Chest Farm (Blox Fruits)"] = { URL = "https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/ChestFarmOp", Method = 1 },
+    ["3008 Gui (No tiene nombre)"] = { URL = "https://github.com/UltraStuff/scripts2/blob/main/3008?raw=true", Method = 1 },
+    ["Nova Hub"] = { URL = "https://raw.githubusercontent.com/Synergy-Networks/products/main/ProjectNova/loader.lua", Method = 3 },
 }
 
 -- Tabs
-
 local Universals = GUI:Tab{
 	Name = "Universals",
 	Icon = "rbxassetid://6034227139"
@@ -186,5 +208,11 @@ GUI:Notification{
 	Duration = 3,
 	Callback = function() end
 }
+GUI:Notification{
+	Title = "Nev | Script Hub",
+	Text = "Version actual: "..NevVer,
+	Duration = 3,
+	Callback = function() end
+}
 
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/outrozl/project/main/master/findscript.lua?raw=true"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/outrozl/project/main/master/findscript.lua?raw=true"))() -- loadstring(game:HttpGet("https://github.com/ahmadsgamer2/Script--Game/blob/main/Shindo-Life?raw=true"))()
