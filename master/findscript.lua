@@ -143,25 +143,34 @@ local function alphabeticalOrder(a, b)
     end
 end
 
--- Botones de los scripts ordenados alfabéticamente
-local buttons = {}
+-- Lista ordenada de nombres de scripts
+local sortedScriptNames = {}
+for scriptName, _ in pairs(scripts) do
+    table.insert(sortedScriptNames, scriptName)
+end
+table.sort(sortedScriptNames, alphabeticalOrder)
 
-for name, scriptInfo in sortedpairs(scripts, alphabeticalOrder) do
-    local scriptButton = ScriptsTab:Button{
-        Name = name,
+-- Agregar botones para cada script almacenado, en orden alfabético
+for _, scriptName in ipairs(sortedScriptNames) do
+    local scriptData = scripts[scriptName]
+    ScriptsTab:Button{
+        Name = scriptName,
         Description = nil,
-        Callback = function()
-            print("Script ejecutado:", name)
-            -- Aquí va el código para ejecutar el script correspondiente
+        Callback = function() 
+            local success, result = pcall(function()
+                local loadFunction = selectMethod(scriptData.Method)
+                return loadstring(loadFunction(scriptData.URL))()
+            end)
+            if not success then
+                warn("Hubo un error al cargar el script:", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "Nev | Script Hub",
+                    Text = "Hubo un error al cargar el script: " .. result .. ".",
+                    Icon = "rbxassetid://7734053281"
+                })
+            end
         end
     }
-    
-    table.insert(buttons, scriptButton)
-end
-
--- Agregar los botones a la Tab
-for _, button in ipairs(buttons) do
-    button.Parent = ScriptsTab
 end
 
 GUI:Credit{
