@@ -1,3 +1,8 @@
+
+--[[
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+]]
+
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
 local GUI = Mercury:Create{
@@ -17,7 +22,10 @@ local scripts = {
     ["CMD - X"] = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source",
     ["CMD-X"] = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source",
     ["CMDX"] = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source",
-    ["Orca"] = "https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua",
+    ["Orca"] = {
+        URL = "https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua",
+        UseFirstMethod = true
+    },
 }
 
 -- Tabs
@@ -50,15 +58,14 @@ Universals:Slider{
 }
 
 -- Select game
-
 Universals:Textbox{
     Name = "Pon el nombre de algun script",
     Callback = function(text)
-        local scriptName = text
-        local selectedScript = scripts[scriptName]
+        local selectedScript = scripts[text]
         if selectedScript then
             local success, result = pcall(function()
-                return loadstring(game:HttpGet(selectedScript))()
+                local loadFunction = selectedScript.UseFirstMethod and game.HttpGetAsync or game.HttpGet
+                return loadstring(loadFunction(selectedScript.URL))()
             end)
             if not success then
                 warn("Hubo un error al cargar el script:", result)
@@ -92,3 +99,5 @@ GUI:Notification{
 	Duration = 3,
 	Callback = function() end
 }
+
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/outrozl/project/main/script-es/es-ui.lua?raw=true"))()
