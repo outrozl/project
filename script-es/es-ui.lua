@@ -32,6 +32,9 @@ local scripts = {
     ["hoho hub"] = { URL = 'https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI', Method = 1 },
     ["hohohub"] = { URL = 'https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI', Method = 1 },
     ["hoho"] = { URL = 'https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI', Method = 1 },
+    ["TigerAdmin"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 1 },
+    ["tiger"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 1 },
+    ["tigeradmin"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 1 },
 }
 
 -- Tabs
