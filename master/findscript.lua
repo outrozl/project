@@ -109,4 +109,4 @@ GUI:Notification{
 	Callback = function() end
 }
 
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/outrozl/project/main/script-es/es-ui.lua?raw=true"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/outrozl/project/main/master/findscript.lua?raw=true"))()
