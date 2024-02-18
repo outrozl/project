@@ -46,7 +46,26 @@ local scripts = {
     ["DexExplorer"] = { URL = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", Method = 3 },
     ["Dex"] = { URL = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", Method = 3 },
     ["dex"] = { URL = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", Method = 3 },
-    ["dexexplorer"] = { URL = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", Method = 3 }
+    ["dexexplorer"] = { URL = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", Method = 3 },
+    ["Unfair Hub"] = { URL = "https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua", Method = 3 },
+    ["Unfair"] = { URL = "https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua", Method = 3 },
+    ["unfair"] = { URL = "https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua", Method = 3 },
+    ["unfairhub"] = { URL = "https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua", Method = 3 },
+    ["ZenHub"] = { URL = "https://raw.githubusercontent.com/Kaizenofficiall/ZenHub/main/Loader", Method = 3 },
+    ["zenhub"] = { URL = "https://raw.githubusercontent.com/Kaizenofficiall/ZenHub/main/Loader", Method = 3 },
+    ["Uranium X Hub"] = { URL = "https://raw.githubusercontent.com/Augustzyzx/UraniumMobile/main/UraniumKak.lua", Method = 1 },
+    ["Uranium X"] = { URL = "https://raw.githubusercontent.com/Augustzyzx/UraniumMobile/main/UraniumKak.lua", Method = 1 },
+    ["Uranium"] = { URL = "https://raw.githubusercontent.com/Augustzyzx/UraniumMobile/main/UraniumKak.lua", Method = 1 },
+    ["UraniumX"] = { URL = "https://raw.githubusercontent.com/Augustzyzx/UraniumMobile/main/UraniumKak.lua", Method = 1 },
+    ["UraniumX Hub"] = { URL = "https://raw.githubusercontent.com/Augustzyzx/UraniumMobile/main/UraniumKak.lua", Method = 1 },
+    ["CFrame Hub"] = { URL = "https://raw.githubusercontent.com/CFrame3310/CFrameHub/main/BloxFruitV2.lua", Method = 1 },
+    ["CFrame"] = { URL = "https://raw.githubusercontent.com/CFrame3310/CFrameHub/main/BloxFruitV2.lua", Method = 1 },
+    ["cframe"] = { URL = "https://raw.githubusercontent.com/CFrame3310/CFrameHub/main/BloxFruitV2.lua", Method = 1 },
+    ["cframehub"] = { URL = "https://raw.githubusercontent.com/CFrame3310/CFrameHub/main/BloxFruitV2.lua", Method = 1 },
+    ["Neva Hub"] = { URL = "https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2", Method = 1 },
+    ["Neva"] = { URL = "https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2", Method = 1 },
+    ["neva"] = { URL = "https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2", Method = 1 },
+    ["nevahub"] = { URL = "https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2", Method = 1 }
 }
 
 -- Tabs
