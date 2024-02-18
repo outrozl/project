@@ -129,40 +129,39 @@ Universals:Textbox{
     end
 }
 
+-- Función para ordenar alfabéticamente los scripts
 local function alphabeticalOrder(a, b)
-    local firstLetterA = string.sub(a, 1, 1):lower()
-    local firstLetterB = string.sub(b, 1, 1):lower()
-    return firstLetterA < firstLetterB
+    -- Si la primera letra de 'a' es un número y la primera letra de 'b' no lo es, se elige la segunda letra de 'a'
+    if tonumber(string.sub(a, 1, 1)) and not tonumber(string.sub(b, 1, 1)) then
+        return string.sub(a, 2, 2):lower() < string.sub(b, 1, 1):lower()
+    -- Si la primera letra de 'b' es un número y la primera letra de 'a' no lo es, se elige la primera letra de 'a'
+    elseif tonumber(string.sub(b, 1, 1)) and not tonumber(string.sub(a, 1, 1)) then
+        return string.sub(a, 1, 1):lower() < string.sub(b, 2, 2):lower()
+    -- En otros casos, se compara normalmente la primera letra de cada nombre
+    else
+        return string.sub(a, 1, 1):lower() < string.sub(b, 1, 1):lower()
+    end
 end
 
--- Lista ordenada de nombres de scripts
-local sortedScriptNames = {}
-for scriptName, _ in pairs(scripts) do
-    table.insert(sortedScriptNames, scriptName)
-end
-table.sort(sortedScriptNames, alphabeticalOrder)
+-- Botones de los scripts ordenados alfabéticamente
+local buttons = {}
 
--- Agregar botones para cada script almacenado, en orden alfabético
-for _, scriptName in ipairs(sortedScriptNames) do
-    local scriptData = scripts[scriptName]
-    ScriptsTab:Button{
-        Name = scriptName,
+for name, scriptInfo in sortedpairs(scripts, alphabeticalOrder) do
+    local scriptButton = ScriptsTab:Button{
+        Name = name,
         Description = nil,
-        Callback = function() 
-            local success, result = pcall(function()
-                local loadFunction = selectMethod(scriptData.Method)
-                return loadstring(loadFunction(scriptData.URL))()
-            end)
-            if not success then
-                warn("Hubo un error al cargar el script:", result)
-                game:GetService("StarterGui"):SetCore("SendNotification",{
-                    Title = "Nev | Script Hub",
-                    Text = "Hubo un error al cargar el script: " .. result .. ".",
-                    Icon = "rbxassetid://7734053281"
-                })
-            end
+        Callback = function()
+            print("Script ejecutado:", name)
+            -- Aquí va el código para ejecutar el script correspondiente
         end
     }
+    
+    table.insert(buttons, scriptButton)
+end
+
+-- Agregar los botones a la Tab
+for _, button in ipairs(buttons) do
+    button.Parent = ScriptsTab
 end
 
 GUI:Credit{
