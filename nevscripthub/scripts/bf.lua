@@ -103,7 +103,7 @@ end
 
 local BestTab = GUI:Tab{
 	Name = "Best Scripts",
-	Icon = icons["Scripts Icon"]
+	Icon = "rbxassetid://7733749837"
 }
 
 local MobileTab = GUI:Tab{
