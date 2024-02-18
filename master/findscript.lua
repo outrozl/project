@@ -38,11 +38,11 @@ local scripts = {
     ["Redzhub"] = { URL = "https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999", Method = 1 },
     ["RedzHub"] = { URL = "https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999", Method = 1 },
     ["redzhub"] = { URL = "https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999", Method = 1 },
-    ["Alchemy Hub"] = { URL = "https://alchemyhub.xyz/v2", Method = 1 },
-    ["AlchemyHub"] = { URL = "https://alchemyhub.xyz/v2", Method = 1 },
-    ["alchemyhub"] = { URL = "https://alchemyhub.xyz/v2", Method = 1 },
-    ["Alchemy"] = { URL = "https://alchemyhub.xyz/v2", Method = 1 },
-    ["alchemy"] = { URL = "https://alchemyhub.xyz/v2", Method = 1 },
+    ["Alchemy Hub"] = { URL = "https://github.com/outrozl/project/blob/main/master/tools/alchemyloader.lua?raw=true", Method = 1 },
+    ["AlchemyHub"] = { URL = "https://github.com/outrozl/project/blob/main/master/tools/alchemyloader.lua?raw=true", Method = 1 },
+    ["alchemyhub"] = { URL = "https://github.com/outrozl/project/blob/main/master/tools/alchemyloader.lua?raw=true", Method = 1 },
+    ["Alchemy"] = { URL = "https://github.com/outrozl/project/blob/main/master/tools/alchemyloader.lua?raw=true", Method = 1 },
+    ["alchemy"] = { URL = "https://github.com/outrozl/project/blob/main/master/tools/alchemyloader.lua?raw=true", Method = 1 },
 }
 
 -- Tabs
