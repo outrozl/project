@@ -1,3 +1,5 @@
+
+
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
 local GUI = Mercury:Create{
@@ -24,13 +26,10 @@ local scripts = {
     ["IY"] = { URL = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", Method = 1 },
     ["InfiniteYield"] = { URL = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", Method = 1 },
     ["Inf Yield"] = { URL = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", Method = 1 },
-    ["CMD - X"] = { URL = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source", Method = 3 },
-    ["CMD-X"] = { URL = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source", Method = 3 },
-    ["CMDX"] = { URL = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source", Method = 3 },
-    ["Orca"] = {
-        URL = "https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua",
-        Method = 2
-    },
+    ["CMD - X"] = { URL = "https://github.com/CMD-X/CMD-X/blob/master/Source?raw=true", Method = 3 },
+    ["CMD-X"] = { URL = "https://github.com/CMD-X/CMD-X/blob/master/Source?raw=true", Method = 3 },
+    ["CMDX"] = { URL = "https://github.com/CMD-X/CMD-X/blob/master/Source?raw=true", Method = 3 },
+    ["Orca"] = { URL = "https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua", Method = 2 },
 }
 
 -- Tabs
