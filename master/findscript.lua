@@ -69,6 +69,14 @@ Universals:Slider{
     end
 }
 
+Universals:Button{
+	Name = "Rejoin / Reunete al servidor",
+	Description = nil,
+	Callback = function() 
+        game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer) 
+    end
+}
+
 -- Select game
 Universals:Textbox{
     Name = "Pon el nombre de algun script",
