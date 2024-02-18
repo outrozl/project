@@ -73,7 +73,15 @@ Universals:Button{
 	Name = "Rejoin / Reunete al servidor",
 	Description = nil,
 	Callback = function() 
-        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer) -- Robado de tiger admin XDDDDDD
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
+    end
+}
+
+Universals:Button{
+    Name = "¿Quieres añadir?",
+	Description = "Copiaras la invitacion a el servidor de discord",
+	Callback = function() 
+        setclipboard("https://discord.gg/9aFQxqW")
     end
 }
 
