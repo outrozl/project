@@ -27,7 +27,7 @@ local scripts = {
     ["CMD - X"] = { URL = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source", Method = 3 },
     ["CMD-X"] = { URL = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source", Method = 3 },
     ["CMDX"] = { URL = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source", Method = 3 },
-    ["Otro Script"] = {
+    ["Orca"] = {
         URL = "https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua",
         Method = 2
     },
