@@ -1,1 +1,283 @@
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+local NevVer = "Beta 1.0.0"
 
+local GUI = Mercury:Create{
+    Name = "Nev | BF | "..NevVer,
+    Size = UDim2.fromOffset(700, 500),
+    Theme = Mercury.Themes.Dark,
+    Link = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/bf"
+}
+
+local icons = {
+    ["Orion icon"] = "rbxassetid://4483345998",
+    ["Nev Icon"] = "rbxassetid://6034227139",
+    ["Warn Icon"] = "rbxassetid://6031071053",
+    ["Error Icon"] = "rbxassetid://7734053281",
+    ["Success Icon"] = "rbxassetid://7733710700",
+    ["Credits Icon"] = "rbxassetid://7733765398",
+    ["Bell Icon"] = "rbxassetid://7733675275",
+    ["Player Scripts Icon"] = "rbxassetid://7733752575",
+    ["Universal Scripts Icon"] = "rbxassetid://7733920768",
+    ["Scripts Icon"] = "rbxassetid://7733749837",
+}
+
+local best = {
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+}
+
+local mobile = {
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+}
+
+local utilitys = {
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+}
+
+local other = {
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+    [""] = { URL = "", Method = 1 },
+}
+
+-- Functions
+
+local function selectMethod(method, useRaw)
+    if method == 1 then
+        return useRaw and game.HttpGet or function(url) return game:HttpGet(url) end
+    elseif method == 2 then
+        return useRaw and game.HttpGetAsync or function(url) return game:HttpGetAsync(url) end
+    elseif method == 3 then
+        return useRaw and loadstring(game:HttpGet(url, true)) or function(url) return loadstring(game:HttpGet(url, true))() end
+    end
+end
+
+local BestTab = GUI:Tab{
+	Name = "Best Scripts",
+	Icon = icons["Scripts Icon"]
+}
+
+local MobileTab = GUI:Tab{
+	Name = "Mobile Scripts",
+	Icon = icons["Universal Scripts Icon"]
+}
+
+local UtilitysTab = GUI:Tab{
+    Name = "Utility Scripts",
+    Icon = icons["Player Scripts Icon"]
+}
+
+local OtherTab = GUI:Tab{
+    Name = "Other",
+    Icon = icons["Player Scripts Icon"]
+}
+
+-- Función para ordenar alfabéticamente los scripts
+local function alphabeticalOrder(a, b)
+    -- Si la primera letra de 'a' es un número y la primera letra de 'b' no lo es, se elige la segunda letra de 'a'
+    if tonumber(string.sub(a, 1, 1)) and not tonumber(string.sub(b, 1, 1)) then
+        return string.sub(a, 2, 2):lower() < string.sub(b, 1, 1):lower()
+    -- Si la primera letra de 'b' es un número y la primera letra de 'a' no lo es, se elige la primera letra de 'a'
+    elseif tonumber(string.sub(b, 1, 1)) and not tonumber(string.sub(a, 1, 1)) then
+        return string.sub(a, 1, 1):lower() < string.sub(b, 2, 2):lower()
+    -- En otros casos, se compara normalmente la primera letra de cada nombre
+    else
+        return string.sub(a, 1, 1):lower() < string.sub(b, 1, 1):lower()
+    end
+end
+
+-- Lista ordenada de nombres de scripts
+local sortedScriptNames = {}
+for scriptName, _ in pairs(best) do
+    table.insert(sortedScriptNames, scriptName)
+end
+table.sort(sortedScriptNames, alphabeticalOrder)
+
+-- Agregar botones para cada script almacenado, en orden alfabético
+for _, scriptName in ipairs(sortedScriptNames) do
+    local scriptData = best[scriptName]
+    BestTab:Button{
+        Name = scriptName,
+        Description = nil,
+        Callback = function() 
+            local success, result = pcall(function()
+                local loadFunction = selectMethod(scriptData.Method)
+                return loadstring(loadFunction(scriptData.URL))()
+            end)
+            if not success then
+                warn("Hubo un error al cargar el script:", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "Nev | Script Hub",
+                    Text = "Hubo un error al cargar el script: " .. result .. ".",
+                    Icon = "rbxassetid://7734053281"
+                })
+            end
+        end
+    }
+end
+
+-- Lista ordenada de nombres de scripts
+local sortedScriptNames = {}
+for scriptName, _ in pairs(mobile) do
+    table.insert(sortedScriptNames, scriptName)
+end
+table.sort(sortedScriptNames, alphabeticalOrder)
+
+-- Agregar botones para cada script almacenado, en orden alfabético
+for _, scriptName in ipairs(sortedScriptNames) do
+    local scriptData = mobile[scriptName]
+    MobileTab:Button{
+        Name = scriptName,
+        Description = nil,
+        Callback = function() 
+            local success, result = pcall(function()
+                local loadFunction = selectMethod(scriptData.Method)
+                return loadstring(loadFunction(scriptData.URL))()
+            end)
+            if not success then
+                warn("Hubo un error al cargar el script:", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "Nev | Script Hub",
+                    Text = "Hubo un error al cargar el script: " .. result .. ".",
+                    Icon = "rbxassetid://7734053281"
+                })
+            end
+        end
+    }
+end
+
+-- Lista ordenada de nombres de scripts
+local sortedScriptNames = {}
+for scriptName, _ in pairs(utilitys) do
+    table.insert(sortedScriptNames, scriptName)
+end
+table.sort(sortedScriptNames, alphabeticalOrder)
+
+-- Agregar botones para cada script almacenado, en orden alfabético
+for _, scriptName in ipairs(sortedScriptNames) do
+    local scriptData = utilitys[scriptName]
+    UtilitysTab:Button{
+        Name = scriptName,
+        Description = nil,
+        Callback = function() 
+            local success, result = pcall(function()
+                local loadFunction = selectMethod(scriptData.Method)
+                return loadstring(loadFunction(scriptData.URL))()
+            end)
+            if not success then
+                warn("Hubo un error al cargar el script:", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "Nev | Script Hub",
+                    Text = "Hubo un error al cargar el script: " .. result .. ".",
+                    Icon = "rbxassetid://7734053281"
+                })
+            end
+        end
+    }
+end
+
+-- Lista ordenada de nombres de scripts
+local sortedScriptNames = {}
+for scriptName, _ in pairs(other) do
+    table.insert(sortedScriptNames, scriptName)
+end
+table.sort(sortedScriptNames, alphabeticalOrder)
+
+-- Agregar botones para cada script almacenado, en orden alfabético
+for _, scriptName in ipairs(sortedScriptNames) do
+    local scriptData = other[scriptName]
+    OtherTab:Button{
+        Name = scriptName,
+        Description = nil,
+        Callback = function() 
+            local success, result = pcall(function()
+                local loadFunction = selectMethod(scriptData.Method)
+                return loadstring(loadFunction(scriptData.URL))()
+            end)
+            if not success then
+                warn("Hubo un error al cargar el script:", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "Nev | Script Hub",
+                    Text = "Hubo un error al cargar el script: " .. result .. ".",
+                    Icon = "rbxassetid://7734053281"
+                })
+            end
+        end
+    }
+end
+
+GUI:Credit{
+    Name = "Nev",
+    Description = "Buscador, Codigo, No tengo V3rm",
+    V3rm = nil,
+    Discord = "https://discord.gg/GXYytRX6H3"
+}
+
+GUI:Notification{
+	Title = "Nev | Script Hub",
+	Text = "Script Loaded Successfully",
+	Duration = 3,
+	Callback = function() end
+}
