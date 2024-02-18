@@ -35,6 +35,7 @@ local scripts = {
     ["Makima Hub"] = { URL = "https://raw.githubusercontent.com/Piwwy0909/MakimaRemake/main/Cumback.Makima", Method = 1 },
     ["Sonic Hub"] = { URL = "https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/Protected-25.lua", Method = 1 },
     ["Zee Hub"] = { URL = "https://zKuzy.link/ZeeHub.lua", Method = 1 },
+    ["Wally Autoplayer"] = { URL = "https://github.com/Bart3kk/funky-friday-autoplay/blob/main/script.lua?raw=true", Method = 3 }
 }
 
 -- Tabs
@@ -42,6 +43,11 @@ local scripts = {
 local Universals = GUI:Tab{
 	Name = "Universals",
 	Icon = "rbxassetid://6034227139"
+}
+
+local ScriptsTab = GUI:Tab{
+	Name = "Almacenados",
+	Icon = "rbxassetid://7733749837"
 }
 
 -- Content
@@ -119,6 +125,42 @@ Universals:Textbox{
         end
     end
 }
+
+local function alphabeticalOrder(a, b)
+    local firstLetterA = string.sub(a, 1, 1):lower()
+    local firstLetterB = string.sub(b, 1, 1):lower()
+    return firstLetterA < firstLetterB
+end
+
+-- Lista ordenada de nombres de scripts
+local sortedScriptNames = {}
+for scriptName, _ in pairs(scripts) do
+    table.insert(sortedScriptNames, scriptName)
+end
+table.sort(sortedScriptNames, alphabeticalOrder)
+
+-- Agregar botones para cada script almacenado, en orden alfabético
+for _, scriptName in ipairs(sortedScriptNames) do
+    local scriptData = scripts[scriptName]
+    ScriptsTab:Button{
+        Name = scriptName,
+        Description = nil,
+        Callback = function() 
+            local success, result = pcall(function()
+                local loadFunction = selectMethod(scriptData.Method)
+                return loadstring(loadFunction(scriptData.URL))()
+            end)
+            if not success then
+                warn("Hubo un error al cargar el script:", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "Nev | Script Hub",
+                    Text = "Hubo un error al cargar el script: " .. result .. ".",
+                    Icon = "rbxassetid://7734053281"
+                })
+            end
+        end
+    }
+end
 
 GUI:Credit{
 	Name = "Nev",
