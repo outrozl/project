@@ -117,6 +117,13 @@ Universals:Textbox{
                 Text = "El nombre del script ingresado no coincide con qué script disponible.", -- Required
                 Icon = "rbxassetid://7734053281" -- Optional
             })
+            if text ~= scripts["Alchemy"] or scripts["Alchemy Hub"] or scripts["alchemy"] or scripts["alchemyhub"] or scripts["AlchemyHub"] then
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "Nev | Script Hub", -- Required
+                    Text = "Si Alchemy Hub no se ejecuta pueden ser problemas con tu antivirus.", -- Required
+                    Icon = "rbxassetid://7734053281" -- Optional
+                })
+            end
         end
     end
 }
