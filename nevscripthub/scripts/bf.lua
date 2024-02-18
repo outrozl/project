@@ -8,19 +8,6 @@ local GUI = Mercury:Create{
     Link = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/bf"
 }
 
-local icons = {
-    ["Orion icon"] = "rbxassetid://4483345998",
-    ["Nev Icon"] = "rbxassetid://6034227139",
-    ["Warn Icon"] = "rbxassetid://6031071053",
-    ["Error Icon"] = "rbxassetid://7734053281",
-    ["Success Icon"] = "rbxassetid://7733710700",
-    ["Credits Icon"] = "rbxassetid://7733765398",
-    ["Bell Icon"] = "rbxassetid://7733675275",
-    ["Player Scripts Icon"] = "rbxassetid://7733752575",
-    ["Universal Scripts Icon"] = "rbxassetid://7733920768",
-    ["Scripts Icon"] = "rbxassetid://7733749837",
-}
-
 local best = {
     [""] = { URL = "", Method = 1 },
     [""] = { URL = "", Method = 1 },
@@ -121,17 +108,17 @@ local BestTab = GUI:Tab{
 
 local MobileTab = GUI:Tab{
 	Name = "Mobile Scripts",
-	Icon = icons["Universal Scripts Icon"]
+	Icon = "rbxassetid://6034989549"
 }
 
 local UtilitysTab = GUI:Tab{
     Name = "Utility Scripts",
-    Icon = icons["Player Scripts Icon"]
+    Icon = "rbxassetid://7733752575"
 }
 
 local OtherTab = GUI:Tab{
     Name = "Other",
-    Icon = icons["Player Scripts Icon"]
+    Icon = "rbxassetid://7733924046"
 }
 
 -- Función para ordenar alfabéticamente los scripts
