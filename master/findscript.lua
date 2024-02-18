@@ -35,6 +35,9 @@ local scripts = {
     ["TigerAdmin"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 1 },
     ["tiger"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 1 },
     ["tigeradmin"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 1 },
+    ["rj"] = { URL = "https://raw.githubusercontent.com/outrozl/project/main/master/tools/rj?raw=true", Method = 1 },
+    ["RJ"] = { URL = "https://raw.githubusercontent.com/outrozl/project/main/master/tools/rj?raw=true", Method = 1 },
+    ["Rj"] = { URL = "https://raw.githubusercontent.com/outrozl/project/main/master/tools/rj?raw=true", Method = 1 },
 }
 
 -- Tabs
