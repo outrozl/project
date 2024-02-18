@@ -43,6 +43,10 @@ local scripts = {
     ["alchemyhub"] = { URL = "https://alchemyhub.xyz/v2", Method = 1 },
     ["Alchemy"] = { URL = "https://alchemyhub.xyz/v2", Method = 1 },
     ["alchemy"] = { URL = "https://alchemyhub.xyz/v2", Method = 1 },
+    ["DexExplorer"] = { URL = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", Method = 3 },
+    ["Dex"] = { URL = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", Method = 3 },
+    ["dex"] = { URL = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", Method = 3 },
+    ["dexexplorer"] = { URL = "https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", Method = 3 }
 }
 
 -- Tabs
