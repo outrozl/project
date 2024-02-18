@@ -65,7 +65,19 @@ local scripts = {
     ["Neva Hub"] = { URL = "https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2", Method = 1 },
     ["Neva"] = { URL = "https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2", Method = 1 },
     ["neva"] = { URL = "https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2", Method = 1 },
-    ["nevahub"] = { URL = "https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2", Method = 1 }
+    ["nevahub"] = { URL = "https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2", Method = 1 },
+    ["Makima Hub"] = { URL = "https://raw.githubusercontent.com/Piwwy0909/MakimaRemake/main/Cumback.Makima", Method = 1 },
+    ["Makima"] = { URL = "https://raw.githubusercontent.com/Piwwy0909/MakimaRemake/main/Cumback.Makima", Method = 1 },
+    ["makima"] = { URL = "https://raw.githubusercontent.com/Piwwy0909/MakimaRemake/main/Cumback.Makima", Method = 1 },
+    ["makimahub"] = { URL = "https://raw.githubusercontent.com/Piwwy0909/MakimaRemake/main/Cumback.Makima", Method = 1 },
+    ["Sonic Hub"] = { URL = "https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/Protected-25.lua", Method = 1 },
+    ["Sonic"] = { URL = "https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/Protected-25.lua", Method = 1 },
+    ["sonic"] = { URL = "https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/Protected-25.lua", Method = 1 },
+    ["sonichub"] = { URL = "https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/Protected-25.lua", Method = 1 },
+    ["Zee Hub"] = { URL = "https://zKuzy.link/ZeeHub.lua", Method = 1 },
+    ["Zee"] = { URL = "https://zKuzy.link/ZeeHub.lua", Method = 1 },
+    ["zee"] = { URL = "https://zKuzy.link/ZeeHub.lua", Method = 1 },
+    ["zee hub"] = { URL = "https://zKuzy.link/ZeeHub.lua", Method = 1 },
 }
 
 -- Tabs
