@@ -11,7 +11,13 @@ local GUI = Mercury:Create{
 
 local scripts = {
     ["Infinite Yield"] = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
+    ["IY"] = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
+    ["InfiniteYield"] = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
+    ["Inf Yield"] = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
     ["CMD - X"] = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source",
+    ["CMD-X"] = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source",
+    ["CMDX"] = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source",
+    ["Orca"] = "https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua",
 }
 
 -- Tabs
@@ -71,4 +77,18 @@ Universals:Textbox{
             })
         end
     end
+}
+
+GUI:Credit{
+	Name = "Nev",
+	Description = "Buscador, Codigo, No tengo V3rm",
+	V3rm = nil,
+	Discord = "https://discord.gg/GXYytRX6H3"
+}
+
+GUI:Notification{
+	Title = "Nev | Script Hub",
+	Text = "El script ha cargado correctamente.",
+	Duration = 3,
+	Callback = function() end
 }
