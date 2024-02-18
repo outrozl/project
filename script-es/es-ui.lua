@@ -1,8 +1,3 @@
-
---[[
-    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-]]
-
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
 local GUI = Mercury:Create{
@@ -14,17 +9,27 @@ local GUI = Mercury:Create{
 
 -- Functions
 
+local function selectMethod(method, useRaw)
+    if method == 1 then
+        return useRaw and game.HttpGet or function(url) return game:HttpGet(url) end
+    elseif method == 2 then
+        return useRaw and game.HttpGetAsync or function(url) return game:HttpGetAsync(url) end
+    elseif method == 3 then
+        return useRaw and loadstring(game:HttpGet(url, true)) or function(url) return loadstring(game:HttpGet(url, true))() end
+    end
+end
+
 local scripts = {
-    ["Infinite Yield"] = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
-    ["IY"] = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
-    ["InfiniteYield"] = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
-    ["Inf Yield"] = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
-    ["CMD - X"] = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source",
-    ["CMD-X"] = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source",
-    ["CMDX"] = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source",
-    ["Orca"] = {
+    ["Infinite Yield"] = { URL = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", Method = 1 },
+    ["IY"] = { URL = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", Method = 1 },
+    ["InfiniteYield"] = { URL = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", Method = 1 },
+    ["Inf Yield"] = { URL = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", Method = 1 },
+    ["CMD - X"] = { URL = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source", Method = 3 },
+    ["CMD-X"] = { URL = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source", Method = 3 },
+    ["CMDX"] = { URL = "https://raw.githubusercontent.com/CMD-X/CMD/master/Source", Method = 3 },
+    ["Otro Script"] = {
         URL = "https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua",
-        UseFirstMethod = true
+        Method = 2
     },
 }
 
@@ -64,7 +69,7 @@ Universals:Textbox{
         local selectedScript = scripts[text]
         if selectedScript then
             local success, result = pcall(function()
-                local loadFunction = selectedScript.UseFirstMethod and game.HttpGetAsync or game.HttpGet
+                local loadFunction = selectMethod(selectedScript.Method, selectedScript.UseRaw)
                 return loadstring(loadFunction(selectedScript.URL))()
             end)
             if not success then
