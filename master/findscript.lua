@@ -23,7 +23,7 @@ local scripts = {
     ["Infinite Yield"] = { URL = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", Method = 1 },
     ["CMD - X"] = { URL = "https://github.com/CMD-X/CMD-X/blob/master/Source?raw=true", Method = 3 },
     ["Orca"] = { URL = "https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua", Method = 2 },
-    ["HoHo Hub"] = { URL = 'https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI', Method = 1 },
+    ["HoHo Hub V3"] = { URL = 'https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI', Method = 1 },
     ["TigerAdmin"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 1 },
     ["Redzhub"] = { URL = "https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999", Method = 1 },
     ["Alchemy Hub"] = { URL = "https://alchemyhub.xyz/v2", Method = 1 },
@@ -35,7 +35,10 @@ local scripts = {
     ["Makima Hub"] = { URL = "https://raw.githubusercontent.com/Piwwy0909/MakimaRemake/main/Cumback.Makima", Method = 1 },
     ["Sonic Hub"] = { URL = "https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/Protected-25.lua", Method = 1 },
     ["Zee Hub"] = { URL = "https://zKuzy.link/ZeeHub.lua", Method = 1 },
-    ["Wally Autoplayer"] = { URL = "https://github.com/Bart3kk/funky-friday-autoplay/blob/main/script.lua?raw=true", Method = 3 }
+    ["Wally Autoplayer"] = { URL = "https://github.com/Bart3kk/funky-friday-autoplay/blob/main/script.lua?raw=true", Method = 3 },
+    ["Hoho Hub V2"] = { URL = "https://raw.githubusercontent.com/acsu123/HohoV2/main/OldScriptLoad", Method = 1 },
+    ["Madox Hub"] = { URL = "https://raw.githubusercontent.com/Fiend1sh/FiendMain/main/MadoxHubKey", Method = 3 },
+    ["2x Hub"] = { URL = "https://raw.githubusercontent.com/armch063/BF-1XLIIHUB-V3/main/README.md", Method = 3 },
 }
 
 -- Tabs
