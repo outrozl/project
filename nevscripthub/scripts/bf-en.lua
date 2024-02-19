@@ -268,3 +268,18 @@ GUI:Notification{
 	Duration = 3,
 	Callback = function() end
 }
+
+GUI:Prompt{
+	Followup = false,
+	Title = "Nev | Script Hub",
+	Text = "Want join our discord server?",
+	Buttons = {
+		ok = function()
+            setclipboard("https://discord.gg/GXYytRX6H3")
+			return true
+		end
+		no = function()
+			return false
+		end
+	}
+}
