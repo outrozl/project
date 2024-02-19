@@ -135,83 +135,93 @@ local function alphabeticalOrder(a, b)
     end
 end
 
+-- Lista ordenada de nombres de scripts
+local sortedScriptNames = {}
+for scriptName, _ in pairs(best) do
+    table.insert(sortedScriptNames, scriptName)
+end
+table.sort(sortedScriptNames, alphabeticalOrder)
+
+-- Agregar botones para cada script almacenado, en orden alfabético
 for _, scriptName in ipairs(sortedScriptNames) do
     local scriptData = best[scriptName]
     BestTab:Button{
         Name = scriptName,
         Description = nil,
-        Callback = function()
+        Callback = function() 
             local success, result = pcall(function()
                 local loadFunction = selectMethod(scriptData.Method)
                 return loadstring(loadFunction(scriptData.URL))()
             end)
             if not success then
-                warn("There was an error loading the script:", result)
-                game:GetService("StarterGui"):SetCore("SendNotification", {
+                warn("There was an error loading the script: ", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
                     Title = "Nev | Script Hub",
                     Text = "There was an error loading the script: " .. result .. ".",
                     Icon = "rbxassetid://7734053281"
                 })
             end
-        }
+        end
     }
 end
 
--- Sorted list of script names
+-- Lista ordenada de nombres de scripts
 local sortedScriptNames = {}
 for scriptName, _ in pairs(mobile) do
     table.insert(sortedScriptNames, scriptName)
 end
 table.sort(sortedScriptNames, alphabeticalOrder)
 
--- Add buttons for each stored script, in alphabetical order
+-- Agregar botones para cada script almacenado, en orden alfabético
 for _, scriptName in ipairs(sortedScriptNames) do
     local scriptData = mobile[scriptName]
     MobileTab:Button{
         Name = scriptName,
         Description = nil,
-        Callback = function()
+        Callback = function() 
             local success, result = pcall(function()
                 local loadFunction = selectMethod(scriptData.Method)
                 return loadstring(loadFunction(scriptData.URL))()
             end)
             if not success then
-                warn("There was an error loading the script:", result)
-                game:GetService("StarterGui"):SetCore("SendNotification", {
+                warn("There was an error loading the script: ", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
                     Title = "Nev | Script Hub",
                     Text = "There was an error loading the script: " .. result .. ".",
                     Icon = "rbxassetid://7734053281"
                 })
             end
-        }
+        end
     }
 end
 
+-- Lista ordenada de nombres de scripts
 local sortedScriptNames = {}
 for scriptName, _ in pairs(utilitys) do
     table.insert(sortedScriptNames, scriptName)
 end
 table.sort(sortedScriptNames, alphabeticalOrder)
 
+-- Agregar botones para cada script almacenado, en orden alfabético
 for _, scriptName in ipairs(sortedScriptNames) do
     local scriptData = utilitys[scriptName]
     UtilitysTab:Button{
         Name = scriptName,
         Description = nil,
-        Callback = function()
+        Callback = function() 
             local success, result = pcall(function()
                 local loadFunction = selectMethod(scriptData.Method)
                 return loadstring(loadFunction(scriptData.URL))()
             end)
             if not success then
-                warn("There was an error loading the script:", result)
-                game:GetService("StarterGui"):SetCore("SendNotification", {
+                warn("There was an error loading the script: ", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
                     Title = "Nev | Script Hub",
                     Text = "There was an error loading the script: " .. result .. ".",
                     Icon = "rbxassetid://7734053281"
                 })
             end
-        }
+        end
     }
 end
 
@@ -234,8 +244,8 @@ for _, scriptName in ipairs(sortedScriptNames) do
                 return loadstring(loadFunction(scriptData.URL))()
             end)
             if not success then
-                warn("There was an error loading the script:", result)
-                game:GetService("StarterGui"):SetCore("SendNotification", {
+                warn("There was an error loading the script: ", result)
+                game:GetService("StarterGui"):SetCore("SendNotification",{
                     Title = "Nev | Script Hub",
                     Text = "There was an error loading the script: " .. result .. ".",
                     Icon = "rbxassetid://7734053281"
@@ -251,7 +261,6 @@ GUI:Credit{
     V3rm = nil,
     Discord = "https://discord.gg/GXYytRX6H3"
 }
-
 
 GUI:Notification{
 	Title = "Nev | Script Hub",
