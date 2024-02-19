@@ -5,7 +5,7 @@ local GUI = Mercury:Create{
     Name = "Nev | STG | "..NevVer,
     Size = UDim2.fromOffset(600, 400),
     Theme = Mercury.Themes.Dark,
-    Link = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/stb"
+    Link = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/stg"
 }
 
 local mejores = {
