@@ -276,6 +276,12 @@ GUI:Prompt{
 	Buttons = {
 		ok = function()
             setclipboard("https://discord.gg/GXYytRX6H3")
+            GUI:Notification{
+                Title = "Nev | Script Hub",
+                Text = "Copied the discord server link to your clipboard.",
+                Duration = 3,
+                Callback = function() end
+            }
 			return true
 		end,
 		no = function()
