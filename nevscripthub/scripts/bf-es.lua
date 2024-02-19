@@ -71,22 +71,22 @@ local function selectMethod(method, useRaw)
 end
 
 local BestTab = GUI:Tab{
-    Name = "Best Scripts",
+    Name = "Mejores scripts",
     Icon = "rbxassetid://7733749837"
 }
 
 local MobileTab = GUI:Tab{
-    Name = "Mobile Scripts",
+    Name = "Scripts de movil",
     Icon = "rbxassetid://6034989549"
 }
 
 local UtilitysTab = GUI:Tab{
-    Name = "Utility Scripts",
+    Name = "Scripts de utilidades",
     Icon = "rbxassetid://7733752575"
 }
 
 local OtherTab = GUI:Tab{
-    Name = "Other",
+    Name = "Otro",
     Icon = "rbxassetid://7733924046"
 }
 
