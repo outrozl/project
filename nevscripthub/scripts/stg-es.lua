@@ -2,7 +2,7 @@ local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeei
 local NevVer = "1.0.0"
 
 local GUI = Mercury:Create{
-    Name = "Nev | STB | "..NevVer,
+    Name = "Nev | STG | "..NevVer,
     Size = UDim2.fromOffset(600, 400),
     Theme = Mercury.Themes.Dark,
     Link = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/stb"
