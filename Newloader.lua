@@ -13,7 +13,6 @@ for ids, url in next, games do
 	    Image = "rbxassetid://7733710700",
 	    Time = 5
     })
-    wait(5)
     loadstring(game:HttpGet(url))()
     break
   else
