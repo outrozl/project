@@ -2,6 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
 local games = {
   [{2753915549, 4442272183, 7449423635}] = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/selectlang.bf.lua?raw=true",
+  [{10449761463}] = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/selectlang.stg.lua?raw=true"
 }
 
 for ids, url in next, games do
