@@ -277,7 +277,7 @@ GUI:Prompt{
 		ok = function()
             setclipboard("https://discord.gg/GXYytRX6H3")
 			return true
-		end
+		end,
 		no = function()
 			return false
 		end
