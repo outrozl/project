@@ -32,7 +32,6 @@ local best = {
     ["Ren Hub"] = { URL = "https://raw.githubusercontent.com/UltraStuff/scripts2/main/ren", Method = 1 },
     ["Void Hub"] = { URL = "https://raw.githubusercontent.com/Efe0626/VoidHub/main/Script", Method = 1 },
     ["BlackTrap Gui"] = { URL = "https://gitlab.com/Sky2836/test/-/raw/main/Script_All_In-One", Method = 1 },
-    ["More Scripts Soon!!"] = { URL = "", Method = 1 },
 }
 
 local mobile = {
@@ -43,7 +42,6 @@ local mobile = {
     ["Speed Hub X"] = { URL = "https://raw.githubusercontent.com/ahmadsgamer2/Script--Game/main/Script%20Game", Method = 1 },
     ["Uranium X Hub"] = { URL = "https://raw.githubusercontent.com/Augustzyzx/UraniumMobile/main/UraniumKak.lua", Method = 1 },
     ["CFrame Hub"] = { URL = "https://raw.githubusercontent.com/CFrame3310/CFrameHub/main/BloxFruit_Mobile.lua", Method = 1 },
-    ["More Scripts Soon!!"] = { URL = "", Method = 1 },
 }
 
 local utilitys = {
@@ -55,7 +53,6 @@ local other = {
     ["Shadow Hub"] = { URL = "https://raw.githubusercontent.com/xPeachy/ShadowHub/main/BF", Method = 1 },
     ["Playback X Hub"] = { URL = "https://raw.githubusercontent.com/NeaPchX2/Playback-X-HUB/main/Protected.lua.txt", Method = 1 },
     ["Flare Hub"] = { URL = "https://raw.githubusercontent.com/1f0yt/community/master/flares", Method = 1 },
-    ["More Scripts Soon!!"] = { URL = "", Method = 1 },
 }
 
 -- Functions
