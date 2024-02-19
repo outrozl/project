@@ -10,7 +10,7 @@ for ids, url in next, games do
     OrionLib:MakeNotification({
 	    Name = "Nev | Script Hub",
 	    Content = "The game is supported wait!",
-	    Image = "rbxassetid://4483345998",
+	    Image = "rbxassetid://7733710700",
 	    Time = 5
     })
     wait(5)
@@ -21,7 +21,7 @@ for ids, url in next, games do
         OrionLib:MakeNotification({
 	        Name = "Nev | Script Hub",
 	        Content = "Game not supported",
-	        Image = "rbxassetid://4483345998",
+	        Image = "rbxassetid://7734053281",
 	        Time = 5
         })
     })
