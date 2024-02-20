@@ -29,9 +29,9 @@ local GUI = Mercury:Create{
 }
 
 local best = {
-    ["Tiger Admin (Sin clave)"] = { URL = "https://raw.githubusercontent.com/Scripterbacon/TSBobfuscator/main/Main.Lua", Method = 1 },
+    ["Tiger Admin (Sin clave)"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 1 },
     ["Prison Breaker (IDK)"] = { URL = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/tools/prisonbreaker1.5.lua?raw=true", Method = 1 },
-    ["Septex Admin (Clave)"] = { URL = "https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true", Method = 3 },
+    ["Septex Admin (Clave)"] = { URL = "https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife", Method = 3 },
 }
 
 -- Funciones
