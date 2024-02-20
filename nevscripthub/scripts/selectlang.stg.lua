@@ -32,12 +32,12 @@ local Tab = Window:MakeTab({
 Tab:AddDropdown({
 	Name = "Dropdown",
 	Default = nil,
-	Options = {"English", "Español (No esta funcionando)", "Português (não está funcionando)", "日本語 (動かない)"},
+	Options = {"English", "Español", "Português (não está funcionando)", "日本語 (動かない)"},
 	Callback = function(Value)
 		if Value == "English" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/outrozl/project/main/nevscripthub/scripts/stg-en.lua"))()
             OrionLib:Destroy()
-        elseif Value == "Español (No esta funcionando)" then
+        elseif Value == "Español" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/outrozl/project/main/nevscripthub/scripts/stg-es.lua"))()
             OrionLib:Destroy()
         elseif Value == "Português (não está funcionando)" then
