@@ -32,7 +32,7 @@ local Tab = Window:MakeTab({
 Tab:AddDropdown({
 	Name = "Dropdown",
 	Default = nil,
-	Options = {"English", "Español", "Português", "日本語"},
+	Options = {"English", "Español (No esta funcionando)", "Português (não está funcionando)", "日本語 (動かない)"},
 	Callback = function(Value)
 		if Value == "English" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/outrozl/project/main/nevscripthub/scripts/stg-en.lua"))()
