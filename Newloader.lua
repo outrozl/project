@@ -10,7 +10,7 @@ for ids, url in next, games do
   if table.find(ids, game.PlaceId) then
     OrionLib:MakeNotification({
 	    Name = "Nev | Script Hub",
-	    Content = "The game is supported wait!",
+	    Content = "Game founded: "..game.Name,
 	    Image = "rbxassetid://7733710700",
 	    Time = 5
     })
