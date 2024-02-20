@@ -9,12 +9,6 @@ local games = {
 for ids, url in next, games do
 
   if table.find(ids, game.PlaceId) then
-    OrionLib:MakeNotification({
-	Name = "Nev | Script Hub",
-	Content = "Game founded: "..game.Name,
-	Image = "rbxassetid://7733710700",
-	Time = 5
-    })
     loadstring(game:HttpGet(url))()
     break
   else
