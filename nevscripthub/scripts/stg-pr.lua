@@ -3,9 +3,9 @@ local universalver = loadstring(game:HttpGet("https://github.com/outrozl/project
 local NevVer = ""
 
 local GUI = Mercury:Create{
-    Nome = "Nev | STG | "..NevVer,
-    Tamanho = UDim2.fromOffset(600, 400),
-    Tema = Mercury.Temas.Escuro,
+    Name = "Nev | STG | "..NevVer,
+    Size = UDim2.fromOffset(600, 400),
+    Theme = Mercury.Themes.Dark,
     Link = "https://github.com/outrozl/project/blob/main/nevscripthub/scripts/stg"
 }
 
@@ -28,8 +28,8 @@ local function selecionarMétodo(método, usarRaw)
 end
 
 local MelhorTab = GUI:Tab{
-    Nome = "Scripts",
-    Icone = "rbxassetid://7733749837"
+    Name = "Scripts",
+    Icon = "rbxassetid://7733749837"
 }
 
 -- Função para ordenar alfabeticamente os scripts
@@ -67,40 +67,40 @@ for _, nomeScript in ipairs(nomesScriptsOrdenados) do
             if not sucesso then
                 warn("Houve um erro ao carregar o script: ", resultado)
                 game:GetService("StarterGui"):SetCore("SendNotification",{
-                    Título = "Nev | Hub de Scripts",
-                    Texto = "Houve um erro ao carregar o script: " .. resultado .. ".",
-                    Icone = "rbxassetid://7734053281"
+                    Title = "Nev | Hub de Scripts",
+                    Text = "Houve um erro ao carregar o script: " .. resultado .. ".",
+                    Icon = "rbxassetid://7734053281"
                 })
             end
         end
     }
 end
 
-GUI:Crédito{
-    Nome = "Nev",
-    Descrição = "Pesquisador, Código, Eu não tenho V3rm",
+GUI:Credits{
+    Name = "Nev",
+    Description = "Pesquisador, Código, Eu não tenho V3rm",
     V3rm = nil,
     Discord = "https://discord.gg/GXYytRX6H3"
 }
 
-GUI:Notificação{
-    Título = "Nev | Hub de Scripts",
+GUI:Notification{
+    Title = "Nev | Hub de Scripts",
     Texto = "Script carregado com sucesso, versão: " ..NevVer,
-    Duração = 3,
+    Duration = 3,
     Callback = function() end
 }
 
 GUI:Prompt{
-    Seguimento = false,
-    Título = "Nev | Hub de Scripts",
-    Texto = "Quer entrar no nosso servidor do Discord?",
-    Botões = {
+    Followup = false,
+    Title = "Nev | Hub de Scripts",
+    Text = "Quer entrar no nosso servidor do Discord?",
+    Buttons = {
         ok = function()
             setclipboard("https://discord.gg/GXYytRX6H3")
             GUI:Notificação{
-                Título = "Nev | Hub de Scripts",
-                Texto = "O link do servidor do Discord foi copiado para a sua área de transferência.",
-                Duração = 3,
+                Title = "Nev | Hub de Scripts",
+                Text = "O link do servidor do Discord foi copiado para a sua área de transferência.",
+                Duration = 3,
                 Callback = function() end
             }
             return true
