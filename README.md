@@ -8,4 +8,4 @@ loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/Newloader.
 
 - Prison Life
 - Strongest Battlegrounds (No duelos)
-- 
+- Blox Fruits
