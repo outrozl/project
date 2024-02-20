@@ -1,5 +1,5 @@
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
-local NevVer = "1.0.0"
+local NevVer = loadstring(game:HttpGet(""))()
 
 local GUI = Mercury:Create{
     Nome = "Nev | STG | "..NevVer,
