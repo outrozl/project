@@ -131,7 +131,7 @@ table.sort(sortedScriptNames, alphabeticalOrder)
 -- Agregar botones para cada script almacenado, en orden alfabético
 for _, scriptName in ipairs(sortedScriptNames) do
     local scriptData = best[scriptName]
-    BestTab:Button{
+    BestTab:AddButton{
         Name = scriptName,
         Description = nil,
         Callback = function() 
