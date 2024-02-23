@@ -1,1 +1,1 @@
-
+print("Nev | Script Hub |")
