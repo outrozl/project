@@ -58,26 +58,16 @@ local Section3 = Tab2:AddSection({
     Name = "Universals scripts"
 })
 
-local githubLink = "https://github.com/outrozl/project/blob/main/master/universalsscripts.json?raw=true"
-local function fetchScriptsUniversals()
-    local success, response = pcall(game.HttpGet, game, githubLink)
+local function fetchScript(url)
+    local success, response = pcall(game.HttpGet, game, url)
     if success then
-        local scriptsData = HttpService:JSONDecode(response)
-        for _, scriptData in pairs(scriptsData) do
-            Tab2:AddButton({
-                Name = scriptData.name,
-                Callback = function()
-                    loadstring(game:HttpGet(scriptData.raw))()
-                end
-            })
-        end
+        local scriptSource = HttpService:JSONDecode(response)
+        local script = game:GetObjects("rbxassetid://")[1]:Clone()
+        script.Source = scriptSource
+        script.Parent = game.Workspace
     else
-        OrionLib:MakeNotification({
-            Name = "Error",
-            Content = "Failed to fetch scripts from GitHub",
-            Time = 5
-        })
+        warn("Error al obtener el script: " .. url)
     end
 end
 
-fetchScriptsUniversals()
+fetchScript("https://github.com/outrozl/project/blob/main/master/universalsscripts.json?raw=true")
