@@ -136,3 +136,11 @@ addscript(Tab2, "Unnamed ESP", function()
             'https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))()
     end)
 end)
+
+addscript(Tab2, "V.G Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub"))()
+end)
+
+addscript(Tab2, "HoHo Hub (Mension honorable 🤚)", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+end)
