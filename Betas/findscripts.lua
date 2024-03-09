@@ -82,7 +82,12 @@ local function addscript(TabToUse, name, callbacktoscript)
     TabToUse:AddButton({
         Name = name,
         Callback = function()
-            callbacktoscript()
+            local success, errorMsg = pcall(callbacktoscript)
+            if success then
+                addnotify("Script Loaded", name .. " script executed successfully (thanks for using FindScripts)")
+            else
+                addnotify("Script Error", "Failed to execute " .. name .. ": " .. errorMsg, "4483345998", 5)
+            end
         end
     })
 end
@@ -119,4 +124,15 @@ addscript(Tab2, "Orca Ultima Snapshot (Esta version puede ser inestable)", funct
     loadstring(
         game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/snapshot.lua")
     )()
+end)
+
+addscript(Tab2, "CMD-X", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source"))()
+end)
+
+addscript(Tab2, "Unnamed ESP", function()
+    pcall(function()
+        loadstring(game:HttpGet(
+            'https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))()
+    end)
 end)
