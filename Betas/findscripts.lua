@@ -9,6 +9,8 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
+local JVer = "1.0.5B"
+
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
         Name = title,
@@ -30,6 +32,12 @@ OrionLib:MakeNotification({
 local Tab = Window:MakeTab({
     Name = "Loader",
     Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local HelpTab = Window:MakeTab({
+    Name = "Ayuda",
+    Icon = "rbxassetid://5107159171",
     PremiumOnly = false
 })
 
@@ -92,6 +100,10 @@ local function addscript(TabToUse, name, callbacktoscript)
     })
 end
 
+local function addtext(TabToUse, Name, Content)
+    TabToUse:AddParagraph(Name, Content)
+end
+
 addscript(Tab2, "Infinite Yield", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
@@ -144,3 +156,9 @@ end)
 addscript(Tab2, "HoHo Hub (Mension honorable 🤚)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
 end)
+
+addtext(HelpTab, "FindScripts",
+    "Totalmente hecho por just_nev_dev \n La interfaz de Find Scripts es de OrionLib creada por shlexware")
+addtext(HelpTab, "Referencias",
+    "🤚 Mensión honorable \n 👑 Hecho por just_nev_dev \n ✅ just_nev_dev ha usado este script \n ✨ De los mejores scripts \n La letra B es para referirse alas Betas \n ST es para referirse alas Snapshot")
+addtext(HelpTab, "Changelogs", "Añadidos \n Mensiones / Referencias \n Tab de ayuda \n Version actual: " .. JVer)
