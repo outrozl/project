@@ -50,8 +50,8 @@ Tab:AddTextbox({
     Callback = function(Value)
         for name, callback in pairs(scripts) do
             if name == Value then
-                callback() -- Execute the script
                 addnotify("Script Loaded", name .. " script executed successfully", "7733710700", 5)
+                callback() -- Execute the script
                 return     -- Exit the loop after a match is found
             end
         end
