@@ -166,7 +166,7 @@ end
 local function checkgame()
     if game.PlaceId == 155615604 then
         local GameChecker = Window:MakeTab({
-            Name = "Juego encontrado",
+            Name = "Juego actual",
             Icon = "rbxassetid://7733675275",
             PremiumOnly = false
         })
@@ -178,7 +178,7 @@ local function checkgame()
         end)
     elseif game.PlaceId == 2753915549 then
         local GameChecker = Window:MakeTab({
-            Name = "Juego encontrado",
+            Name = "Juego actual",
             Icon = "rbxassetid://7733675275",
             PremiumOnly = false
         })
@@ -197,7 +197,7 @@ local function checkgame()
         end)
     elseif game.PlaceId == 4442272183 then
         local GameChecker = Window:MakeTab({
-            Name = "Juego encontrado",
+            Name = "Juego actual",
             Icon = "rbxassetid://7733675275",
             PremiumOnly = false
         })
@@ -216,7 +216,7 @@ local function checkgame()
         end)
     elseif game.PlaceId == 7449423635 then
         local GameChecker = Window:MakeTab({
-            Name = "Juego encontrado",
+            Name = "Juego actual",
             Icon = "rbxassetid://7733675275",
             PremiumOnly = false
         })
