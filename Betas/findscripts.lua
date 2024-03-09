@@ -34,7 +34,7 @@ local Tab = Window:MakeTab({
 })
 
 local Tab2 = Window:MakeTab({
-    Name = "Scripts Universales",
+    Name = "Universales",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
