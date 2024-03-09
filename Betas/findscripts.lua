@@ -68,9 +68,10 @@ local function addscript(TabToUse, name, callbacktoscript)
         Callback = function()
             local success, errorMsg = pcall(callbacktoscript)
             if success then
-                addnotify("Script Loaded", name .. " script executed successfully (thanks for using FindScripts)")
+                addnotify("FindScripts", name .. " script ejecutado con exito (Gracias por usar FindScripts)",
+                    "6034227139", 5)
             else
-                addnotify("Script Error", "Failed to execute " .. name .. ": " .. errorMsg, "4483345998", 5)
+                addnotify("FindScripts", "Error al ejecutar " .. name .. ": " .. errorMsg, "6031071053", 5)
             end
         end
     })
