@@ -9,7 +9,7 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
-local JVer = "1.0.7 🅱️"
+local JVer = "1.0.8 🅱️"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -140,3 +140,28 @@ addtext(HelpTab, "Referencias",
 addtext(HelpTab, "Changelogs",
     "Cambios \n Cambios en referencias \n Cambios en los iconos de las tabs \n Version actual: " ..
     JVer)
+
+local texts = {
+    "¡Eres tan genial como un sándwich de queso a la plancha perfectamente dorado!",
+    "Tu sonrisa es tan radiante como un atardecer de verano.",
+    "Tu ingenio es tan afilado como un katana recién forjado.",
+    "Tu amabilidad es tan reconfortante como una manta suave en un día frío.",
+    "Tu presencia es tan energizante como una taza de café recién hecho.",
+    "Tu sentido del humor es tan contagioso como una risa incontrolable.",
+    "Tu creatividad es tan inspiradora como una obra de arte maestra.",
+    "Tu inteligencia es tan admirable como un libro lleno de sabiduría.",
+    "Tu bondad es tan contagiosa como un bostezo.",
+    "¡Eres tan increíble como un unicornio mágico!",
+}
+
+local function addTexting()
+    while true do
+        wait(math.random(120, 180))
+        local randomIndex = math.random(#texts)
+        addnotify("¡Oye mira esto!", texts[randomIndex], "6034227139", 4)
+    end
+end
+
+addTexting()
+
+OrionLib:init()
