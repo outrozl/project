@@ -87,5 +87,5 @@ local function addscript(TabToUse, name, callbacktoscript)
 end
 
 addscript(Tab2, "Infinite yield", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/NevStudios/NevStudios/main/NevStudios.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
