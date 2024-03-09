@@ -5,11 +5,11 @@ local Window = OrionLib:MakeWindow({
     SaveConfig = true,
     IntroEnabled = true,
     IntroText = "By just_nev_dev",
-    IntroIcon = "rbxassetid://6034227139",
+    IntroIcon = "rbxassetid://15269178344",
     ConfigFolder = "NevStudiosConfig"
 })
 
-local JVer = "1.0.5B"
+local JVer = "1.0.6🅱️"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -20,56 +20,33 @@ local function addnotify(title, content, icon, time)
     })
 end
 
-local scripts = {}
-
 OrionLib:MakeNotification({
     Name = "Nev Studios",
     Content = "FindScripts Loaded",
-    Image = "rbxassetid://6034227139",
+    Image = "rbxassetid://15269178344",
     Time = 5
 })
 
 local Tab = Window:MakeTab({
     Name = "Loader",
-    Icon = "rbxassetid://4483345998",
+    Icon = "rbxassetid://15269179995",
     PremiumOnly = false
 })
 
 local HelpTab = Window:MakeTab({
     Name = "Ayuda",
-    Icon = "rbxassetid://5107159171",
+    Icon = "rbxassetid://15269254897",
     PremiumOnly = false
 })
 
 local Tab2 = Window:MakeTab({
     Name = "Universales",
-    Icon = "rbxassetid://4483345998",
+    Icon = "rbxassetid://15269258980",
     PremiumOnly = false
 })
 
 local Section = Tab:AddSection({
-    Name = "Loader (Usa el nombre real para cargar el script)"
-})
-
-Tab:AddTextbox({
-    Name = "Loader: (Solo nombres)",
-    Default = "",
-    TextDisappear = false,
-    Callback = function(Value)
-        for name, callback in pairs(scripts) do
-            if name == Value then
-                addnotify("Script cargado", name .. " script ejecutado con exito (gracias por usar FindScripts)",
-                    "7733710700", 5)
-                callback() -- Execute the script
-                return     -- Exit the loop after a match is found
-            end
-        end
-        addnotify("Script no encontrado (404)", "El script que buscas no existe", "6031071053", 5)
-    end
-})
-
-local Section2 = Tab:AddSection({
-    Name = "Loadstring Loader (Usa un link raw para cargar el script)"
+    Name = "Loader (Usa el link raw para cargar el script)"
 })
 
 Tab:AddTextbox({
@@ -86,7 +63,6 @@ local Section3 = Tab2:AddSection({
 })
 
 local function addscript(TabToUse, name, callbacktoscript)
-    scripts[name] = callbacktoscript
     TabToUse:AddButton({
         Name = name,
         Callback = function()
@@ -132,7 +108,7 @@ addscript(Tab2, "Orca (✨, ✅)", function()
     )()
 end)
 
-addscript(Tab2, "Orca ST (✨, ✅)", function()
+addscript(Tab2, "Orca (📑 ,✨, ✅)", function()
     loadstring(
         game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/snapshot.lua")
     )()
@@ -160,5 +136,7 @@ end)
 addtext(HelpTab, "FindScripts",
     "Totalmente hecho por just_nev_dev \n La interfaz de Find Scripts es de OrionLib creada por shlexware")
 addtext(HelpTab, "Referencias",
-    "🤚 Mensión honorable \n 👑 Hecho por just_nev_dev \n ✅ just_nev_dev ha usado este script \n ✨ De los mejores scripts \n La letra B es para referirse alas Betas \n ST es para referirse alas Snapshot")
-addtext(HelpTab, "Changelogs", "Añadidos \n Mensiones / Referencias \n Tab de ayuda \n Version actual: " .. JVer)
+    "🤚 Mensión honorable \n 👑 Hecho por just_nev_dev \n ✅ just_nev_dev ha usado este script \n ✨ De los mejores scripts \n 🅱️ es para referirse alas Betas \n 📑 es para referirse alas Snapshot")
+addtext(HelpTab, "Changelogs",
+    "Cambios \n Cambios en referencias \n Cambios en los iconos de las tabs \n Cambios en el logo de Nev Scripts \n Version actual: " ..
+    JVer)
