@@ -104,11 +104,11 @@ local function addtext(TabToUse, Name, Content)
     TabToUse:AddParagraph(Name, Content)
 end
 
-addscript(Tab2, "Infinite Yield", function()
+addscript(Tab2, "Infinite Yield (✨, ✅)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
 
-addscript(Tab2, "Hydroxide", function()
+addscript(Tab2, "Hydroxide (✨, ✅)", function()
     local owner = "Upbolt"
     local branch = "revision"
 
@@ -122,38 +122,38 @@ addscript(Tab2, "Hydroxide", function()
     webImport("ui/main")
 end)
 
-addscript(Tab2, "Fates Admin", function()
+addscript(Tab2, "Fates Admin (✨)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
 end)
 
-addscript(Tab2, "Orca", function()
+addscript(Tab2, "Orca (✨, ✅)", function()
     loadstring(
         game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua")
     )()
 end)
 
-addscript(Tab2, "Orca Ultima Snapshot (Esta version puede ser inestable)", function()
+addscript(Tab2, "Orca ST (✨, ✅)", function()
     loadstring(
         game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/snapshot.lua")
     )()
 end)
 
-addscript(Tab2, "CMD-X", function()
+addscript(Tab2, "CMD-X (✨, ✅)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source"))()
 end)
 
-addscript(Tab2, "Unnamed ESP", function()
+addscript(Tab2, "Unnamed ESP (✨, ✅)", function()
     pcall(function()
         loadstring(game:HttpGet(
             'https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))()
     end)
 end)
 
-addscript(Tab2, "V.G Hub", function()
+addscript(Tab2, "V.G Hub (✨, ✅)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub"))()
 end)
 
-addscript(Tab2, "HoHo Hub (Mension honorable 🤚)", function()
+addscript(Tab2, "HoHo Hub (🤚, ✅)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
 end)
 
