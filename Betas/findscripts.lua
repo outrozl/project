@@ -9,7 +9,7 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
-local JVer = "1.0.8 🅱️"
+local JVer = "1.0.9 🅱️"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -164,9 +164,8 @@ end
 
 local function checkgame()
     if game.PlaceId == 155615604 then
-        local gamename = game.name
         local GameChecker = Window:MakeTab({
-            Name = gamename,
+            Name = "Juego encontrado",
             Icon = "rbxassetid://7733675275",
             PremiumOnly = false
         })
@@ -177,9 +176,8 @@ local function checkgame()
             loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'), true))()
         end)
     elseif game.PlaceId == 2753915549 then
-        local gamename = game.name
         local GameChecker = Window:MakeTab({
-            Name = gamename,
+            Name = "Juego encontrado",
             Icon = "rbxassetid://7733675275",
             PremiumOnly = false
         })
@@ -197,9 +195,8 @@ local function checkgame()
             loadstring(game:HttpGet("https://github.com/UltraStuff/scripts2/blob/main/bf?raw=true"))()
         end)
     elseif game.PlaceId == 4442272183 then
-        local gamename = game.name
         local GameChecker = Window:MakeTab({
-            Name = gamename,
+            Name = "Juego encontrado",
             Icon = "rbxassetid://7733675275",
             PremiumOnly = false
         })
@@ -217,9 +214,8 @@ local function checkgame()
             loadstring(game:HttpGet("https://github.com/UltraStuff/scripts2/blob/main/bf?raw=true"))()
         end)
     elseif game.PlaceId == 7449423635 then
-        local gamename = game.name
         local GameChecker = Window:MakeTab({
-            Name = gamename,
+            Name = "Juego encontrado",
             Icon = "rbxassetid://7733675275",
             PremiumOnly = false
         })
