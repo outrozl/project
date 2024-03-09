@@ -138,7 +138,7 @@ addtext(HelpTab, "FindScripts",
 addtext(HelpTab, "Referencias",
     "🤚 Mensión honorable \n 👑 Hecho por just_nev_dev \n ✅ just_nev_dev ha usado este script \n ✨ De los mejores scripts \n 🅱️ es para referirse alas Betas \n 📑 es para referirse alas Snapshot")
 addtext(HelpTab, "Changelogs",
-    "Cambios \n Cambios en referencias \n Cambios en los iconos de las tabs \n Version actual: " ..
+    "Cambios \n Se añadio un game checker \n Version actual: " ..
     JVer)
 
 local texts = {
@@ -161,6 +161,87 @@ local function addTexting()
         addnotify("¡Oye mira esto!", texts[randomIndex], "6034227139", 4)
     end
 end
+
+local function checkgame()
+    if game.PlaceId == 155615604 then
+        local gamename = game.name
+        local GameChecker = Window:MakeTab({
+            Name = gamename,
+            Icon = "rbxassetid://7733675275",
+            PremiumOnly = false
+        })
+        addscript(GameChecker, "Tiger Admin (✨, ✅)", function()
+            loadstring(game:HttpGet("https://github.com/H17S32/Tiger_Admin/blob/main/TigeradminREVAMP.txt?raw=true"))()
+        end)
+        addscript(GameChecker, "Septex Admin (✨, ✅)", function()
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'), true))()
+        end)
+    elseif game.PlaceId == 2753915549 then
+        local gamename = game.name
+        local GameChecker = Window:MakeTab({
+            Name = gamename,
+            Icon = "rbxassetid://7733675275",
+            PremiumOnly = false
+        })
+
+        addscript(GameChecker, "HoHo Hub (✨, ✅)", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+        end)
+
+        addscript(GameChecker, "Speed X Hub (✨, ✅)", function()
+            loadstring(game:HttpGetAsync(
+                "https://raw.githubusercontent.com/ahmadsgamer2/Script--Game/main/Script%20Game"))()
+        end)
+
+        addscript(GameChecker, "Mas scripts (De Furky) (✨, ✅)", function()
+            loadstring(game:HttpGet("https://github.com/UltraStuff/scripts2/blob/main/bf?raw=true"))()
+        end)
+    elseif game.PlaceId == 4442272183 then
+        local gamename = game.name
+        local GameChecker = Window:MakeTab({
+            Name = gamename,
+            Icon = "rbxassetid://7733675275",
+            PremiumOnly = false
+        })
+
+        addscript(GameChecker, "HoHo Hub (✨, ✅)", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+        end)
+
+        addscript(GameChecker, "Speed X Hub (✨, ✅)", function()
+            loadstring(game:HttpGetAsync(
+                "https://raw.githubusercontent.com/ahmadsgamer2/Script--Game/main/Script%20Game"))()
+        end)
+
+        addscript(GameChecker, "Mas scripts (De Furky) (✨, ✅)", function()
+            loadstring(game:HttpGet("https://github.com/UltraStuff/scripts2/blob/main/bf?raw=true"))()
+        end)
+    elseif game.PlaceId == 7449423635 then
+        local gamename = game.name
+        local GameChecker = Window:MakeTab({
+            Name = gamename,
+            Icon = "rbxassetid://7733675275",
+            PremiumOnly = false
+        })
+
+        addscript(GameChecker, "HoHo Hub (✨, ✅)", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+        end)
+
+        addscript(GameChecker, "Speed X Hub (✨, ✅)", function()
+            loadstring(game:HttpGetAsync(
+                "https://raw.githubusercontent.com/ahmadsgamer2/Script--Game/main/Script%20Game"))()
+        end)
+
+        addscript(GameChecker, "Mas scripts (De Furky) (✨, ✅)", function()
+            loadstring(game:HttpGet("https://github.com/UltraStuff/scripts2/blob/main/bf?raw=true"))()
+        end)
+    else
+        addnotify("FindScripts", "Juego no encontrado usa los scripts Universales.", "6034227139", 5)
+    end
+end
+
+checkgame()
 
 addTexting()
 
