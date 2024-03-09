@@ -5,11 +5,11 @@ local Window = OrionLib:MakeWindow({
     SaveConfig = true,
     IntroEnabled = true,
     IntroText = "By just_nev_dev",
-    IntroIcon = "rbxassetid://15269178344",
+    IntroIcon = "rbxassetid://6034227139",
     ConfigFolder = "NevStudiosConfig"
 })
 
-local JVer = "1.0.6🅱️"
+local JVer = "1.0.7 🅱️"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -23,25 +23,25 @@ end
 OrionLib:MakeNotification({
     Name = "Nev Studios",
     Content = "FindScripts Loaded",
-    Image = "rbxassetid://15269178344",
+    Image = "rbxassetid://6034227139",
     Time = 5
 })
 
 local Tab = Window:MakeTab({
     Name = "Loader",
-    Icon = "rbxassetid://15269179995",
+    Icon = "rbxassetid://6034227139",
     PremiumOnly = false
 })
 
 local HelpTab = Window:MakeTab({
     Name = "Ayuda",
-    Icon = "rbxassetid://15269254897",
+    Icon = "rbxassetid://7733765398",
     PremiumOnly = false
 })
 
 local Tab2 = Window:MakeTab({
     Name = "Universales",
-    Icon = "rbxassetid://15269258980",
+    Icon = "rbxassetid://7733920768",
     PremiumOnly = false
 })
 
@@ -138,5 +138,5 @@ addtext(HelpTab, "FindScripts",
 addtext(HelpTab, "Referencias",
     "🤚 Mensión honorable \n 👑 Hecho por just_nev_dev \n ✅ just_nev_dev ha usado este script \n ✨ De los mejores scripts \n 🅱️ es para referirse alas Betas \n 📑 es para referirse alas Snapshot")
 addtext(HelpTab, "Changelogs",
-    "Cambios \n Cambios en referencias \n Cambios en los iconos de las tabs \n Cambios en el logo de Nev Scripts \n Version actual: " ..
+    "Cambios \n Cambios en referencias \n Cambios en los iconos de las tabs \n Version actual: " ..
     JVer)
