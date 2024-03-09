@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Mi Script",
+    "raw": "https://raw.githubusercontent.com/usuario/repositorio/rama/ruta/al/script.lua"
+  },
+  {
+    "name": "Otro Script",
+    "raw": "https://raw.githubusercontent.com/usuario/repositorio/rama/ruta/al/otroScript.lua"
+  }
+]
