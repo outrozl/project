@@ -9,6 +9,17 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
+local function addnotify(title, content, icon, time)
+    OrionLib:MakeNotification({
+        Name = title,
+        Content = content,
+        Image = "rbxassetid://" .. icon .. "",
+        Time = time
+    })
+end
+
+local scripts = {}
+
 OrionLib:MakeNotification({
     Name = "Nev Studios",
     Content = "FindScripts Loaded",
@@ -37,7 +48,14 @@ Tab:AddTextbox({
     Default = "",
     TextDisappear = false,
     Callback = function(Value)
-        print(Value)
+        for name, callback in pairs(scripts) do
+            if name == Value then
+                callback() -- Execute the script
+                addnotify("Script Loaded", name .. " script executed successfully", "7733710700", 5)
+                return     -- Exit the loop after a match is found
+            end
+        end
+        addnotify("Script Not Found", "The script you entered does not exist", "6031071053", 5)
     end
 })
 
@@ -58,16 +76,16 @@ local Section3 = Tab2:AddSection({
     Name = "Universals scripts"
 })
 
-local function fetchScript(url)
-    local success, response = pcall(game.HttpGet, game, url)
-    if success then
-        local scriptSource = HttpService:JSONDecode(response)
-        local script = game:GetObjects("rbxassetid://")[1]:Clone()
-        script.Source = scriptSource
-        script.Parent = game.Workspace
-    else
-        warn("Error al obtener el script: " .. url)
-    end
+local function addscript(TabToUse, name, callbacktoscript)
+    scripts[name] = callbacktoscript
+    TabToUse:AddButton({
+        Name = name,
+        Callback = function()
+            callbacktoscript()
+        end
+    })
 end
 
-fetchScript("https://github.com/outrozl/project/blob/main/master/universalsscripts.json?raw=true")
+addscript(Tab2, "Infinite yield", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/NevStudios/NevStudios/main/NevStudios.lua"))()
+end)
