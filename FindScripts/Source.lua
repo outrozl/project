@@ -10,7 +10,7 @@ local Window = OrionLib:MakeWindow({
 })
 
 -- Obtener la versión
-local JVer = "1.0.9"
+local JVer = "v1.0.9"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
