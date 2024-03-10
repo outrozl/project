@@ -94,6 +94,7 @@ G2L["5"]["MouseButton1Up"]:Connect(function()
 		["Low Quality Parts"] = true -- Lower quality parts
 	}
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
+	GL2["1"]:Destroy()
 end)
 
 -- StarterGui.Unnamed_Nev.Frame.Norun
