@@ -11,7 +11,7 @@ local Window = OrionLib:MakeWindow({
 
 local function GetVer()
     -- Enlace que contiene solo el número de versión
-    local versionURL = "https://raw.githubusercontent.com/outrozl/project/main/nevscripthub/scripts/tools/version.txt"
+    local versionURL = "https://raw.githubusercontent.com/outrozl/project/main/FindScripts/version.txt"
     
     -- Realizar una solicitud HTTP para obtener el contenido del enlace
     local response = game.HttpGet(versionURL)
