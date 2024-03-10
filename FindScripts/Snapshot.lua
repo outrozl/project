@@ -9,18 +9,8 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
-local JVer = "1.1.0 📑"
-
-local function executeCode(code)
-    local success, errorMsg = pcall(loadstring, code)
-    if success then
-        -- El código se ejecutó correctamente
-        addnotify("¡Éxito!", "El código se ejecutó correctamente.", "6034227139", 5)
-    else
-        -- Se produjo un error al ejecutar el código
-        addnotify("Error de código", "Ocurrió un error al ejecutar el código: " .. errorMsg, "4483345998", 5)
-    end
-end
+-- Obtener la versión
+local JVer = "v1.1.0 📑"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -74,20 +64,6 @@ Tab:AddTextbox({
         loadstring(game:HttpGet('' .. Value .. ''))()
     end
 })
-
-local Section2 = Tab:AddSection({
-    Name = "Loader (🅱️) (Usa el codigo del script para cargarlo)"
-})
-
-Tab:AddTextbox({
-    Name = "Loader: (Solo codigo)",
-    Default = "",
-    TextDisappear = false,
-    Callback = function(Value)
-        executeCode(Value)
-    end
-})
-
 
 local Section3 = Tab2:AddSection({
     Name = "Scripts Universales"
