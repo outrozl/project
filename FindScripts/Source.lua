@@ -9,26 +9,8 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
-local function GetVer()
-    -- Enlace que contiene solo el número de versión
-    local versionURL = "https://raw.githubusercontent.com/outrozl/project/main/FindScripts/version.txt"
-    
-    -- Realizar una solicitud HTTP para obtener el contenido del enlace
-    local response = game.HttpGet(versionURL)
-    
-    -- Verificar si la respuesta es válida
-    if response then
-        -- Extraer el número de versión del texto obtenido
-        local NevVer = response:match("(%d+%.%d+%.%d+)")
-        return NevVer
-    else
-        -- Manejar el caso en que la respuesta no sea válida
-        return nil
-    end
-end
-
 -- Obtener la versión
-local JVer = GetVer()
+local JVer = "1.0.9"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
