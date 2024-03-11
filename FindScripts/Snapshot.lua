@@ -127,7 +127,7 @@ function formatTime(seconds)
 end
 
 function getServerPing()
-    local network = game:GetService("Network")
+    local network = game:GetService("ReplicatedStorage")
     local ping = network:GetPing()
     return ping
 end
