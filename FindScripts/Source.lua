@@ -210,6 +210,10 @@ addscript(Tab2, "HoHo Hub (🤚, ✅)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
 end)
 
+addscript(Tab2, "Vape V4 (🤚, ✅)", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+end)
+
 addscript(Tab2, "Optimizador (✅)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/alert_optimizer.lua?raw=true"))()
 end)
