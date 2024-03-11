@@ -103,15 +103,28 @@ end
 
 local playerCount = getNumberOfPlayers()
 
-function getLocalPlayerTimeInServer()
-    local player = game:GetService("Players").LocalPlayer
-    local joinTime = player.JoinTime
-    local currentTime = os.time()
-    local timeInServer = currentTime - joinTime
-    return timeInServer
+function getScriptRunTime()
+    local startTime = os.time()
+    local function updateTime()
+        local currentTime = os.time()
+        local elapsedTime = currentTime - startTime
+        local timeString = formatTime(elapsedTime)
+        print("Tiempo de ejecución del script: " .. timeString)
+    end
+
+    -- Actualizar cada segundo
+    while true do
+        updateTime()
+        wait(1)
+    end
 end
 
-local getLocalPlayerTimeInServer1 = getLocalPlayerTimeInServer()
+function formatTime(seconds)
+    local hours = math.floor(seconds / 3600)
+    local minutes = math.floor((seconds % 3600) / 60)
+    local seconds = math.floor(seconds % 60)
+    return string.format("%02d:%02d:%02d", hours, minutes, seconds)
+end
 
 function getServerPing()
     local network = game:GetService("Network")
@@ -160,7 +173,7 @@ local SerStats = ServerTab:AddSection({
 addtext(SerStats, "Servidor",
     "Jugadores: " ..
     playerCount ..
-    "\n Tiempo de juego: " .. getLocalPlayerTimeInServer1 .. "\n Ping del servidor: " .. getServerPing1 .. " ms")
+    "\n Tiempo de juego: " .. getScriptRunTime .. "\n Ping del servidor: " .. getServerPing1 .. " ms")
 
 addscript(scriptsbynev, "FindScripts (👑)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua"))()
