@@ -127,10 +127,11 @@ local function toggleAntiAFK(enabled)
     end
 end
 
-local function addToggler(TabToUse, name, normal, callbacktotoggle)
+local function addToggler(TabToUse, name, normal, CanSave, callbacktotoggle)
     TabToUse:AddToggle({
         Name = name,
         Default = normal,
+        Save = CanSave,
         Callback = callbacktotoggle
     })
 end
@@ -209,7 +210,7 @@ addscript(Tab2, "Optimizador (👑)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/alert_optimizer.lua?raw=true"))()
 end)
 
-addToggler(Tab2, "Anti AFK (👑)", false, toggleAntiAFK)
+addToggler(Tab2, "Anti AFK (👑)", false, false, toggleAntiAFK)
 
 addtext(HelpTab, "FindScripts",
     "Totalmente hecho por just_nev_dev \n La interfaz de Find Scripts es de OrionLib creada por shlexware")
