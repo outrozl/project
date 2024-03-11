@@ -70,6 +70,7 @@ G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["5"]["Text"] = [[Ejecutar]];
 G2L["5"]["Position"] = UDim2.new(0.20588235557079315, 0, 0.6867924332618713, 0);
 G2L["5"]["MouseButton1Up"]:Connect(function()
+	GL2["1"]:Destroy()
 	_G.Settings = {
 		Players = {
 			["Ignore Me"] = true, -- Ignore your Character
@@ -94,7 +95,6 @@ G2L["5"]["MouseButton1Up"]:Connect(function()
 		["Low Quality Parts"] = true -- Lower quality parts
 	}
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
-	GL2["1"]:Destroy()
 end)
 
 -- StarterGui.Unnamed_Nev.Frame.Norun
