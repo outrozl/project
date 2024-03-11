@@ -11,7 +11,7 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
-local JVer = "v1.1.0"
+local JVer = "v0006 📑"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
