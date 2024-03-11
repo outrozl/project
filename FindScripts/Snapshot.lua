@@ -126,14 +126,6 @@ function formatTime(seconds)
     return string.format("%02d:%02d:%02d", hours, minutes, seconds)
 end
 
-function getServerPing()
-    local network = game:GetService("ReplicatedStorage")
-    local ping = network:GetPing()
-    return ping
-end
-
-local getServerPing1 = getServerPing()
-
 local function addtext(TabToUse, Name, Content)
     TabToUse:AddParagraph(Name, Content)
 end
@@ -173,7 +165,7 @@ local SerStats = ServerTab:AddSection({
 addtext(SerStats, "Servidor",
     "Jugadores: " ..
     playerCount ..
-    "\n Tiempo de juego: " .. getScriptRunTime .. "\n Ping del servidor: " .. getServerPing1 .. " ms")
+    "\n Tiempo de juego: " .. getScriptRunTime)
 
 addscript(scriptsbynev, "FindScripts (👑)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua"))()
