@@ -10,7 +10,7 @@ local Window = OrionLib:MakeWindow({
 })
 
 -- Obtener la versión
-local JVer = "v1.1.0 📑"
+local JVer = "v1000 📑"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -88,6 +88,32 @@ local function addtext(TabToUse, Name, Content)
     TabToUse:AddParagraph(Name, Content)
 end
 
+local bb = game:GetService("VirtualUser")
+
+local function toggleAntiAFK(enabled)
+    if enabled then
+        game:GetService('Players').LocalPlayer.Idled:connect(function()
+            bb:CaptureController()
+            bb:ClickButton2(Vector2.new())
+            addnotify("Anti AFK", "Anti AFK roblox intento sacarte del juego", "4483345998", 4)
+            wait(2)
+            addnotify("Anti AFK", "Anti AFK activado.", "4483345998", 4)
+        end)
+        addnotify("Anti AFK", "Anti AFK esta activado", "4483345998", 4) -- Assuming addnotify is defined
+    else
+        game:GetService('Players').LocalPlayer.Idled:disconnect()        -- Disable anti-AFK
+        addnotify("Anti AFK", "Anti AFK ha sido desactivado.", "4483345998", 4)
+    end
+end
+
+local function addToggler(TabToUse, name, normal, callbacktotoggle)
+    TabToUse:AddToggle({
+        Name = name,
+        Default = normal,
+        Callback = callbacktotoggle
+    })
+end
+
 addscript(scriptsbynev, "FindScripts (👑)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua"))()
 end)
@@ -152,9 +178,11 @@ addscript(Tab2, "HoHo Hub (🤚, ✅)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
 end)
 
-addscript(Tab2, "Optimizar juego", function()
+addscript(Tab2, "Optimizador (✨, ✅)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/alert_optimizer.lua?raw=true"))()
 end)
+
+addToggler(Tab2, "Anti AFK (👑)", false, toggleAntiAFK)
 
 addtext(HelpTab, "FindScripts",
     "Totalmente hecho por just_nev_dev \n La interfaz de Find Scripts es de OrionLib creada por shlexware")
@@ -163,7 +191,7 @@ addtext(HelpTab, "Referencias",
 addtext(HelpTab, "GameChecker",
     "Juegos Actuales \n Blox Fruits \n Prison life \n Legends of speed \n Blade Ball \n My Restaurant \n Saitama battlegrounds (No duelos aprende a jugar sin script XD)")
 addtext(HelpTab, "Changelogs",
-    "Cambios \n Se actualizo el GameChecker \n Version actual: " ..
+    "Cambios \n Se actualizo el GameChecker \n Se añadio un antiafk \n Version actual: " ..
     JVer)
 
 local texts = {
