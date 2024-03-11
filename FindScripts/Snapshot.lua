@@ -11,7 +11,7 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
-local JVer = "v1005 📑"
+local JVer = "v1.1.0"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -139,7 +139,7 @@ end
 
 local HttpService = game:GetService("HttpService")
 local webhookURL =
-"https://discord.com/api/webhooks/1216824862278947006/OZ-4V7PwmTXjJfS_bWQ19S2ux1Vck8_uNLPN7fSp0S3LAgrqGIeUyoAS0FanNnbsaSfF"                    -- Reemplaza "ID" y "TOKEN"
+"https://discord.com/api/webhooks/1216824862278947006/OZ-4V7PwmTXjJfS_bWQ19S2ux1Vck8_uNLPN7fSp0S3LAgrqGIeUyoAS0FanNnbsaSfF" -- Reemplaza "ID" y "TOKEN"
 
 local SerStats = ServerTab:AddSection({
     Name = "Servidor"
@@ -252,6 +252,7 @@ HelpTab:AddTextbox({
                 print("Error al enviar sugerencia: " .. response.Body)
             end
         end)
+        return Value
     end
 })
 
