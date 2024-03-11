@@ -11,7 +11,7 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
-local JVer = "v1004 📑"
+local JVer = "v1005 📑"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -26,7 +26,6 @@ OrionLib:MakeNotification({
     Name = "Nev Studios",
     Content = "FindScripts Loaded",
     Image = "rbxassetid://6034227139",
-    Time = 5
 })
 
 local HelpTab = Window:MakeTab({
@@ -138,6 +137,10 @@ local function addToggler(TabToUse, name, normal, CanSave, callbacktotoggle)
     })
 end
 
+local HttpService = game:GetService("HttpService")
+local webhookURL =
+"https://discord.com/api/webhooks/1216824862278947006/OZ-4V7PwmTXjJfS_bWQ19S2ux1Vck8_uNLPN7fSp0S3LAgrqGIeUyoAS0FanNnbsaSfF"                    -- Reemplaza "ID" y "TOKEN"
+
 local SerStats = ServerTab:AddSection({
     Name = "Servidor"
 })
@@ -228,7 +231,35 @@ addtext(HelpTab, "Referencias",
     "🤚 Mensión honorable \n 👑 Hecho por just_nev_dev \n ✅ just_nev_dev ha usado este script \n ✨ De los mejores scripts \n 🅱️ es para referirse alas Betas \n 📑 es para referirse alas Snapshot")
 addtext(HelpTab, "GameChecker",
     "Juegos Actuales \n Blox Fruits \n Prison life \n Legends of speed \n Blade Ball \n My Restaurant \n Saitama battlegrounds (No duelos aprende a jugar sin script XD)")
-addtext(HelpTab, "Changelogs",
+
+local Secd2tion = HelpTab:AddSection({
+    Name = "Sugiere cosas"
+})
+
+HelpTab:AddTextbox({
+    Name = "Escribe tu sugerencia",
+    Default = "",
+    TextDisappear = true,
+    Callback = function(Value)
+        local data = {
+            content = Value
+        }
+        local jsonData = HttpService:JSONEncode(data)
+        HttpService:PostAsync(webhookURL, jsonData, function(response)
+            if response.Success then
+                print("Sugerencia enviada correctamente.")
+            else
+                print("Error al enviar sugerencia: " .. response.Body)
+            end
+        end)
+    end
+})
+
+local Se2cd2tion = HelpTab:AddSection({
+    Name = "Otro"
+})
+
+addtext(HelpTab, "Registro de cambios",
     "Cambios \n Se actualizo el GameChecker \n Se añadio un antiafk \n Version actual: " ..
     JVer)
 
