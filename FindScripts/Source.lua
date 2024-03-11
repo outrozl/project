@@ -143,7 +143,7 @@ local SerStats = ServerTab:AddSection({
 addtext(SerStats, "Servidor", "Jugadores: " .. playerCount)
 
 addscript(scriptsbynev, "FindScripts (👑)", function()
-    loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua"))()
+    loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua?raw=true"))()
 end)
 
 addscript(scriptsbynev, "Ejecutador de scripts para pc (👑)", function()
@@ -437,7 +437,7 @@ end
 
 checkgame()
 
+loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/toggler.lua?raw=true"))()
 addTexting()
 
-loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/toggler.lua?raw=true"))()
 OrionLib:init()
