@@ -1,5 +1,3 @@
-loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/toggler.lua?raw=true"))()
-
 local OrionLib = loadstring(game:HttpGet(('https://github.com/outrozl/UI/blob/main/OrionEdited.lua?raw=true')))()
 local Window = OrionLib:MakeWindow({
     Name = "FindScripts",
@@ -423,4 +421,5 @@ checkgame()
 
 addTexting()
 
+loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/toggler.lua?raw=true"))()
 OrionLib:init()
