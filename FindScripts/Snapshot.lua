@@ -139,7 +139,7 @@ end
 
 local HttpService = game:GetService("HttpService")
 local webhookURL =
-"https://discord.com/api/webhooks/1216824862278947006/OZ-4V7PwmTXjJfS_bWQ19S2ux1Vck8_uNLPN7fSp0S3LAgrqGIeUyoAS0FanNnbsaSfF" -- Reemplaza "ID" y "TOKEN"
+"dam" 
 
 local SerStats = ServerTab:AddSection({
     Name = "Servidor"
