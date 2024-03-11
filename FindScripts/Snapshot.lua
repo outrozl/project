@@ -162,10 +162,7 @@ local SerStats = ServerTab:AddSection({
     Name = "Servidor"
 })
 
-addtext(SerStats, "Servidor",
-    "Jugadores: " ..
-    playerCount ..
-    "\n Tiempo de juego: " .. getScriptRunTime)
+addtext(SerStats, "Servidor", "Jugadores: " .. playerCount .. "\n Tiempo de juego: " .. getScriptRunTime)
 
 addscript(scriptsbynev, "FindScripts (👑)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua"))()
