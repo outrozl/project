@@ -10,7 +10,7 @@ local Window = OrionLib:MakeWindow({
 })
 
 -- Obtener la versión
-local JVer = "v1000 📑"
+local JVer = "v1001 📑"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -92,17 +92,17 @@ local bb = game:GetService("VirtualUser")
 
 local function toggleAntiAFK(enabled)
     if enabled then
-        game:GetService('Players').LocalPlayer.Idled:connect(function()
+        local afkConnection = game:GetService('Players').LocalPlayer.Idled:connect(function()
+            showAntiAFKMessage()
             bb:CaptureController()
             bb:ClickButton2(Vector2.new())
-            addnotify("Anti AFK", "Anti AFK roblox intento sacarte del juego", "4483345998", 4)
-            wait(2)
-            addnotify("Anti AFK", "Anti AFK activado.", "4483345998", 4)
         end)
-        addnotify("Anti AFK", "Anti AFK esta activado", "4483345998", 4) -- Assuming addnotify is defined
+        addnotify("Anti AFK Enabled", "Anti AFK is now active.", "4483345998", 4)
     else
-        game:GetService('Players').LocalPlayer.Idled:disconnect()        -- Disable anti-AFK
-        addnotify("Anti AFK", "Anti AFK ha sido desactivado.", "4483345998", 4)
+        if afkConnection then          -- Check if connection exists
+            afkConnection:Disconnect() -- Disconnect the saved connection
+        end
+        addnotify("Anti AFK Disabled", "Anti AFK has been disabled.", "4483345998", 4)
     end
 end
 
