@@ -146,6 +146,10 @@ addscript(scriptsbynev, "FindScripts (👑)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua?raw=true"))()
 end)
 
+addscript(scriptsbynev, "FindScripts (📑, 👑)", function()
+    loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Snapshot.lua?raw=true"))()
+end)
+
 addscript(scriptsbynev, "Ejecutador de scripts para pc (👑)", function()
     addnotify("Nev Internal Executer", "En desarrollo....", "6034227139", 5)
 end)
