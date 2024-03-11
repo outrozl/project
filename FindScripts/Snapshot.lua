@@ -10,7 +10,7 @@ local Window = OrionLib:MakeWindow({
 })
 
 -- Obtener la versión
-local JVer = "v1002 📑"
+local JVer = "v1003 📑"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -28,6 +28,18 @@ OrionLib:MakeNotification({
     Time = 5
 })
 
+local HelpTab = Window:MakeTab({
+    Name = "Ayuda",
+    Icon = "rbxassetid://7733765398",
+    PremiumOnly = false
+})
+
+local ServerTab = Window:MakeTab({
+    Name = "Estadisticas",
+    Icon = "rbxassetid://7733749837",
+    PremiumOnly = false
+})
+
 local Tab = Window:MakeTab({
     Name = "Loader",
     Icon = "rbxassetid://6034227139",
@@ -37,12 +49,6 @@ local Tab = Window:MakeTab({
 local scriptsbynev = Window:MakeTab({
     Name = "Scripts de Nev",
     Icon = "rbxassetid://6034227139",
-    PremiumOnly = false
-})
-
-local HelpTab = Window:MakeTab({
-    Name = "Ayuda",
-    Icon = "rbxassetid://7733765398",
     PremiumOnly = false
 })
 
@@ -84,6 +90,37 @@ local function addscript(TabToUse, name, callbacktoscript)
     })
 end
 
+function getNumberOfPlayers()
+    local players = game:GetService("Players")
+    local playerCount = 0
+    for _, player in pairs(players:GetPlayers()) do
+        if player.IsBot == false then
+            playerCount = playerCount + 1
+        end
+    end
+    return playerCount
+end
+
+local playerCount = getNumberOfPlayers()
+
+function getLocalPlayerTimeInServer()
+    local player = game:GetService("Players").LocalPlayer
+    local joinTime = player.JoinTime
+    local currentTime = os.time()
+    local timeInServer = currentTime - joinTime
+    return timeInServer
+end
+
+local getLocalPlayerTimeInServer1 = getLocalPlayerTimeInServer()
+
+function getServerPing()
+    local network = game:GetService("Network")
+    local ping = network:GetPing()
+    return ping
+end
+
+local getServerPing1 = getServerPing()
+
 local function addtext(TabToUse, Name, Content)
     TabToUse:AddParagraph(Name, Content)
 end
@@ -98,13 +135,13 @@ local function toggleAntiAFK(enabled)
             bb:ClickButton2(Vector2.new())
             print("Anti AFK activado.")
         end)
-        addnotify("Anti AFK", "Anti AFK ha sido activado.", "4483345998", 4)
+        addnotify("Anti AFK", "Anti AFK ha sido activado.", "7733710700", 4)
     else
         if afkConnection then          -- Check if connection exists
             afkConnection:Disconnect() -- Disconnect the saved connection
             print("Anti AFK desactivado.")
         end
-        addnotify("Anti AFK", "Anti AFK ha sido desactivado.", "4483345998", 4)
+        addnotify("Anti AFK", "Anti AFK ha sido desactivado.", "7733710700", 4)
     end
 end
 
@@ -115,6 +152,15 @@ local function addToggler(TabToUse, name, normal, callbacktotoggle)
         Callback = callbacktotoggle
     })
 end
+
+local SerStats = ServerTab:AddSection({
+    Name = "Servidor"
+})
+
+addtext(SerStats, "Servidor",
+    "Jugadores: " ..
+    playerCount ..
+    "\n Tiempo de juego: " .. getLocalPlayerTimeInServer1 .. "\n Ping del servidor: " .. getServerPing1 .. " ms")
 
 addscript(scriptsbynev, "FindScripts (👑)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua"))()
@@ -180,7 +226,7 @@ addscript(Tab2, "HoHo Hub (🤚, ✅)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
 end)
 
-addscript(Tab2, "Optimizador (✨, ✅)", function()
+addscript(Tab2, "Optimizador (👑)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/alert_optimizer.lua?raw=true"))()
 end)
 
@@ -196,6 +242,7 @@ addtext(HelpTab, "Changelogs",
     "Cambios \n Se actualizo el GameChecker \n Se añadio un antiafk \n Version actual: " ..
     JVer)
 
+
 local texts = {
     "¡Eres tan genial como un sándwich de queso a la plancha perfectamente dorado!",
     "Tu sonrisa es tan radiante como un atardecer de verano.",
@@ -207,6 +254,55 @@ local texts = {
     "Tu inteligencia es tan admirable como un libro lleno de sabiduría.",
     "Tu bondad es tan contagiosa como un bostezo.",
     "¡Eres tan increíble como un unicornio mágico!",
+    "¡Tu potencial es tan ilimitado como el cielo!",
+    "¡Tu determinación es tan admirable como una montaña inamovible!",
+    "¡Tu espíritu aventurero es tan emocionante como un viaje a lo desconocido!",
+    "¡Tu mente abierta es tan refrescante como una brisa de aire fresco!",
+    "¡Tu capacidad de adaptación es tan inspiradora como un árbol que se dobla con el viento!",
+    "¡Tu fuerza interior es tan poderosa como una ola gigante!",
+    "¡Tu pasión por la vida es tan contagiosa como una sonrisa!",
+    "¡Tu capacidad para superar obstáculos es tan admirable como un halcón que surca los cielos!",
+    "¡Tu optimismo es tan radiante como el sol!",
+    "¡Tu capacidad para inspirar a otros es tan poderosa como un faro en la noche!",
+    "¡Eres tan divertido como un meme que nunca pasa de moda!",
+    "¡Tus chistes son tan buenos como una pizza caliente!",
+    "¡Tu risa es tan contagiosa como un ataque de hipo!",
+    "¡Tu sentido del humor es tan único como una huella digital!",
+    "¡Tu capacidad para hacer reír a la gente es tan admirable como un comediante profesional!",
+    "¡Eres capaz de lograr cualquier cosa que te propongas!",
+    "¡Confía en ti mismo, eres increíble!",
+    "¡El mundo necesita más personas como tú!",
+    "¡Eres una persona valiosa y mereces ser feliz!",
+    "¡No tengas miedo de ser tú mismo, el mundo te necesita!",
+    "¡Tu valentía es tan inspiradora como un león que enfrenta a una tormenta!",
+    "¡Tu capacidad para afrontar los desafíos es tan admirable como un roble que resiste el viento!",
+    "¡Tu resistencia es tan notable como un diamante que resiste el paso del tiempo!",
+    "¡Tu sabiduría es tan invaluable como un tesoro escondido!",
+    "¡Tu coraje es tan contagioso como un incendio que se propaga!",
+    "¡Tu capacidad para soñar en grande es tan admirable como un águila que vuela alto!",
+    "¡Tu mente abierta es tan refrescante como una ráfaga de aire fresco en un día caluroso!",
+    "¡Tu capacidad para aprender y crecer es tan inspiradora como una flor que florece!",
+    "¡Tu perspicacia es tan aguda como un halcón que observa a su presa!",
+    "¡Tu capacidad para conectar con los demás es tan admirable como un puente que une dos mundos!",
+    "¡Tus expresiones faciales son tan divertidas como una caricatura!",
+    "¡Tu torpeza es tan adorable como un cachorro!",
+    "¡Tu capacidad para reírte de ti mismo es tan admirable como un comediante profesional!",
+    "¡Tus comentarios sarcásticos son tan ingeniosos como un comediante!",
+    "¡Tu capacidad para hacer bromas a los demás es tan contagiosa como una risa!",
+    "¡Eres único y especial a tu manera!",
+    "¡El mundo es un lugar mejor porque estás aquí!",
+    "¡Tienes el poder de cambiar el mundo!",
+    "¡No tengas miedo de ser tú mismo, el mundo te necesita!",
+    "¡Cree en ti mismo, eres capaz de lograr grandes cosas!",
+    "¡La vida es un viaje, disfrútalo al máximo!",
+    "¡Cada día es una nueva oportunidad para aprender y crecer!",
+    "¡No te dejes llevar por las dificultades, enfócate en lo positivo!",
+    "¡Rodéate de personas que te hagan feliz y te inspiren!",
+    "¡Sé agradecido por lo que tienes, hay muchas personas que tienen menos!",
+    "¡No tengas miedo de tomar riesgos!",
+    "¡Sigue tus sueños!",
+    "¡Lucha por lo que crees!",
+    "¡Cree en ti mismo, eres capaz de lograr grandes cosas!",
 }
 
 local function addTexting()
