@@ -9,7 +9,7 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
-local JVer = "v1003 📑"
+local JVer = "v1004 📑"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -143,7 +143,11 @@ local SerStats = ServerTab:AddSection({
 addtext(SerStats, "Servidor", "Jugadores: " .. playerCount)
 
 addscript(scriptsbynev, "FindScripts (👑)", function()
-    loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua"))()
+    loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua?raw=true"))()
+end)
+
+addscript(scriptsbynev, "FindScripts (📑, 👑)", function()
+    loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Snapshot.lua?raw=true"))()
 end)
 
 addscript(scriptsbynev, "Ejecutador de scripts para pc (👑)", function()
@@ -206,7 +210,7 @@ addscript(Tab2, "HoHo Hub (🤚, ✅)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
 end)
 
-addscript(Tab2, "Optimizador (👑)", function()
+addscript(Tab2, "Optimizador (✅)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/alert_optimizer.lua?raw=true"))()
 end)
 
@@ -409,8 +413,26 @@ local function checkgame()
             PremiumOnly = false
         })
 
-        addscript(GameChecker, "No tiene nombre esta interfaz", function()
+        addscript(GameChecker, "No se encontro el nombre de esta interfaz", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Scripterbacon/TSBobfuscator/main/Main.Lua"))()
+        end)
+    elseif game.PlaceId == 4616652839 then
+        local GameChecker = Window:MakeTab({
+            Name = "Shindo Life",
+            Icon = "rbxassetid://7733675275",
+            PremiumOnly = false
+        })
+
+        addscript(GameChecker, "Premier Hub", function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/TrustsenseDev/Utilities/main/Premier.lua', true))()
+        end)
+
+        addscript(GameChecker, "V.G Hub", function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+        end)
+
+        addscript(GameChecker, "Spins infinitos", function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Alrbuddy/Shindo/main/SpinHub'))()
         end)
     else
         addnotify("FindScripts", "Juego no encontrado usa los scripts Universales.", "6034227139", 5)
