@@ -9,7 +9,6 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
--- Obtener la versión
 local JVer = "v1003 📑"
 
 local function addnotify(title, content, icon, time)
@@ -94,7 +93,8 @@ function getNumberOfPlayers()
     local players = game:GetService("Players")
     local playerCount = 0
     for _, player in pairs(players:GetPlayers()) do
-        if player.IsBot == false then
+        -- Check if player is not the local player and not a descendant of it
+        if player ~= game.Players.LocalPlayer and not player:IsDescendantOf(game.Players.LocalPlayer) then
             playerCount = playerCount + 1
         end
     end
