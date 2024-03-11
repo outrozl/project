@@ -103,29 +103,6 @@ end
 
 local playerCount = getNumberOfPlayers()
 
-function getScriptRunTime()
-    local startTime = os.time()
-    local function updateTime()
-        local currentTime = os.time()
-        local elapsedTime = currentTime - startTime
-        local timeString = formatTime(elapsedTime)
-        print("Tiempo de ejecución del script: " .. timeString)
-    end
-
-    -- Actualizar cada segundo
-    while true do
-        updateTime()
-        wait(1)
-    end
-end
-
-function formatTime(seconds)
-    local hours = math.floor(seconds / 3600)
-    local minutes = math.floor((seconds % 3600) / 60)
-    local seconds = math.floor(seconds % 60)
-    return string.format("%02d:%02d:%02d", hours, minutes, seconds)
-end
-
 local function addtext(TabToUse, Name, Content)
     TabToUse:AddParagraph(Name, Content)
 end
@@ -162,7 +139,7 @@ local SerStats = ServerTab:AddSection({
     Name = "Servidor"
 })
 
-addtext(SerStats, "Servidor", "Jugadores: " .. playerCount .. "\n Tiempo de juego: " .. getScriptRunTime())
+addtext(SerStats, "Servidor", "Jugadores: " .. playerCount)
 
 addscript(scriptsbynev, "FindScripts (👑)", function()
     loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua"))()
