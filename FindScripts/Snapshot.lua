@@ -419,7 +419,7 @@ end
 
 checkgame()
 
+loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/toggler.lua?raw=true"))()
 addTexting()
 
-loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/toggler.lua?raw=true"))()
 OrionLib:init()
