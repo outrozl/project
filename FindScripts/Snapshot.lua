@@ -10,7 +10,7 @@ local Window = OrionLib:MakeWindow({
 })
 
 -- Obtener la versión
-local JVer = "v1001 📑"
+local JVer = "v1002 📑"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -96,13 +96,15 @@ local function toggleAntiAFK(enabled)
             showAntiAFKMessage()
             bb:CaptureController()
             bb:ClickButton2(Vector2.new())
+            print("Anti AFK activado.")
         end)
-        addnotify("Anti AFK Enabled", "Anti AFK is now active.", "4483345998", 4)
+        addnotify("Anti AFK", "Anti AFK ha sido activado.", "4483345998", 4)
     else
         if afkConnection then          -- Check if connection exists
             afkConnection:Disconnect() -- Disconnect the saved connection
+            print("Anti AFK desactivado.")
         end
-        addnotify("Anti AFK Disabled", "Anti AFK has been disabled.", "4483345998", 4)
+        addnotify("Anti AFK", "Anti AFK ha sido desactivado.", "4483345998", 4)
     end
 end
 
