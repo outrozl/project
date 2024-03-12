@@ -138,6 +138,13 @@ local function addToggler(TabToUse, name, normal, CanSave, callbacktotoggle)
     })
 end
 
+local function addButton(TabToUse, name, callback)
+    TabToUse:AddButton({
+        Name = name,
+        Callback = callback
+    })
+end
+
 local SerStats = ServerTab:AddSection({
     Name = "Servidor"
 })
@@ -224,6 +231,13 @@ addToggler(Tab2, "Anti AFK (👑)", false, false, toggleAntiAFK)
 
 addtext(HelpTab, "FindScripts",
     "Totalmente hecho por just_nev_dev \n La interfaz de Find Scripts es de OrionLib creada por shlexware")
+
+addButton(HelpTab, "Discord Oficial", function()
+    setclipboard("https://discord.gg/ceQ477MzTK")
+
+    addnotify("FindScripts", "Link de invitacion del servidor de discord copiado en el portapapeles", "6034227139", 5)
+end)
+
 addtext(HelpTab, "Referencias",
     "🤚 Mensión honorable \n 👑 Hecho por just_nev_dev \n ✅ just_nev_dev ha usado este script \n ✨ De los mejores scripts \n 🅱️ es para referirse alas Betas \n 📑 es para referirse alas Snapshot")
 addtext(HelpTab, "GameChecker",
