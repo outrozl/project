@@ -11,7 +11,7 @@ local Window = OrionLib:MakeWindow({
     ConfigFolder = "NevStudiosConfig"
 })
 
-local JVer = "v1.1.0"
+local JVer = "v1.1.1"
 
 local function addnotify(title, content, icon, time)
     OrionLib:MakeNotification({
@@ -241,9 +241,9 @@ end)
 addtext(HelpTab, "Referencias",
     "🤚 Mensión honorable \n 👑 Hecho por just_nev_dev \n ✅ just_nev_dev ha usado este script \n ✨ De los mejores scripts \n 🅱️ es para referirse alas Betas \n 📑 es para referirse alas Snapshot")
 addtext(HelpTab, "GameChecker",
-    "Juegos Actuales \n Blox Fruits \n Prison life \n Legends of speed \n Blade Ball \n My Restaurant \n Saitama battlegrounds (No duelos aprende a jugar sin script XD)")
+    "Juegos Actuales \n Blox Fruits \n Prison life \n Legends of speed \n Blade Ball \n My Restaurant \n Saitama battlegrounds (No duelos aprende a jugar sin script XD) \n Godzilla-X-Kong-Obby-Free-UGC \n HELLO-TOKYO-FRIENDS")
 addtext(HelpTab, "Changelogs",
-    "Cambios \n Se actualizo el GameChecker \n Se añadio un antiafk \n Version actual: " ..
+    "Cambios \n Se actualizo el GameChecker \n Version actual: " ..
     JVer)
 
 
@@ -453,6 +453,64 @@ local function checkgame()
 
         addscript(GameChecker, "Spins infinitos", function()
             loadstring(game:HttpGet('https://raw.githubusercontent.com/Alrbuddy/Shindo/main/SpinHub'))()
+        end)
+    elseif game.PlaceId == 16462849084 then
+        local GameChecker = Window:MakeTab({
+            Name = "GXK - UGC",
+            Icon = "rbxassetid://7733675275",
+            PremiumOnly = false
+        })
+
+        addscript(GameChecker, "No se encontro el nombre de esta interfaz", function()
+            loadstring(game:HttpGet(('https://pastefy.app/m7AnewIp/raw'), true))()
+        end)
+    elseif game.PlaceId == 15015165959 then
+        local GameChecker = Window:MakeTab({
+            Name = "HTF - UGC",
+            Icon = "rbxassetid://7733675275",
+            PremiumOnly = false
+        })
+
+        addscript(GameChecker, "No se encontro el nombre de esta interfaz", function()
+            loadstring(game:HttpGet(('https://pastefy.app/Bet97EeF/raw'), true))()
+        end)
+    elseif game.PlaceId == 142823291 then
+        local GameChecker = Window:MakeTab({
+            Name = "MM2",
+            Icon = "rbxassetid://7733675275",
+            PremiumOnly = false
+        })
+
+        addscript(GameChecker, "Eclipse MM2 (DESCONTINUADO, ✅, ✨)", function()
+            loadstring(game:HttpGet("https://github.com/Ethanoj1/EclipseMM2/blob/master/Script?raw=true"))()
+        end)
+
+        addscript(GameChecker, "Eclipse Hub (✨, ✅)", function()
+            getgenv().mainKey = "nil";
+
+            local a, b, c, d, e = loadstring, request or http_request or (http and http.request) or (syn and syn.request),
+                assert, tostring, "https\58//api.eclipsehub.xyz/auth"; c(a and b, "Executor not Supported")
+            a(b({ Url = e .. "\?\107e\121\61" .. d(mainKey), Headers = { ["User-Agent"] = "Eclipse" } }).Body)()
+        end)
+
+        addscript(GameChecker, "Lunar Hub (✨, ✅)", function()
+            setclipboard("None")
+            addnotify("FindScripts", "Clave de Lunar Hub copiada", "6034227139", 5)
+            loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/cafdac8cf3c413e2aba68641d6247547.lua"))()
+        end)
+    elseif game.PlaceId == 3956818381 then
+        local GameChecker = Window:MakeTab({
+            Name = "NL",
+            Icon = "rbxassetid://7733675275",
+            PremiumOnly = false
+        })
+
+        addscript(GameChecker, "Strike Hub", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/StormSKz12/StirkeHub1/main/Gameincluded"))()
+        end)
+
+        addscript(GameChecker, "Proxima Hub", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
         end)
     else
         addnotify("FindScripts", "Juego no encontrado usa los scripts Universales.", "6034227139", 5)
