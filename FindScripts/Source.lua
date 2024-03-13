@@ -241,7 +241,7 @@ end)
 addtext(HelpTab, "Referencias",
     "🤚 Mensión honorable \n 👑 Hecho por just_nev_dev \n ✅ just_nev_dev ha usado este script \n ✨ De los mejores scripts \n 🅱️ es para referirse alas Betas \n 📑 es para referirse alas Snapshot")
 addtext(HelpTab, "GameChecker",
-    "Juegos Actuales \n Blox Fruits \n Prison life \n Legends of speed \n Blade Ball \n My Restaurant \n Saitama battlegrounds (No duelos aprende a jugar sin script XD) \n Godzilla-X-Kong-Obby-Free-UGC \n HELLO-TOKYO-FRIENDS")
+    "Juegos Actuales \n Blox Fruits \n Prison life \n Legends of speed \n Blade Ball \n My Restaurant \n Saitama battlegrounds (No duelos aprende a jugar sin script XD) \n Godzilla-X-Kong-Obby-Free-UGC \n HELLO-TOKYO-FRIENDS \n Ninja Legends \n Murder Mystery 2")
 addtext(HelpTab, "Changelogs",
     "Cambios \n Se actualizo el GameChecker \n Version actual: " ..
     JVer)
