@@ -1,41 +1,31 @@
 local userInputService = game:GetService("UserInputService")
-local activated = false
-local keys = {"q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "ñ", "z", "x", "c", "v", "b", "n", "m"}
-local pressedKeys = {}
+local keysToPress = {"q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"}
+local shiftKeyPressed = false
 
-local function pressKey(key)
-    userInputService:SendKeyEvent(true, Enum.KeyCode[key], false, userInputService.CurrentInputType)
-    pressedKeys[key] = true
-end
-
-local function releaseKey(key)
-    userInputService:SendKeyEvent(false, Enum.KeyCode[key], false, userInputService.CurrentInputType)
-    pressedKeys[key] = nil
-end
-
-local function pressRandomKey()
-    local randomIndex = math.random(1, #keys)
-    local key = keys[randomIndex]
-    if not pressedKeys[key] then
-        pressKey(key)
+userInputService.InputBegan:Connect(function(input, isProcessed)
+    if not isProcessed and input.KeyCode == Enum.KeyCode.RightShift then
+        shiftKeyPressed = true
     end
-end
+end)
 
-local function onKeyPress(input)
-    if input.KeyCode == Enum.KeyCode.RightShift then
-        activated = not activated
-        print("Modo de teclas aleatorias", activated and "activado" or "desactivado")
+userInputService.InputEnded:Connect(function(input, isProcessed)
+    if not isProcessed and input.KeyCode == Enum.KeyCode.RightShift then
+        shiftKeyPressed = false
     end
-end
+end)
 
-userInputService.InputBegan:Connect(onKeyPress)
-
-while true do
-    if activated then
-        pressRandomKey()
+userInputService.InputBegan:Connect(function(input, isProcessed)
+    if not isProcessed and shiftKeyPressed then
+        for _, key in ipairs(keysToPress) do
+            userInputService:SendKeysPressed({key})
+        end
     end
-    wait(0.1)
-end
+end)
 
-
-print("NevScript", "Press Keys")
+userInputService.InputEnded:Connect(function(input, isProcessed)
+    if not isProcessed and shiftKeyPressed then
+        for _, key in ipairs(keysToPress) do
+            userInputService:SendKeysReleased({key})
+        end
+    end
+end)
