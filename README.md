@@ -34,5 +34,6 @@ setclipboard(id)
 loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua?raw=true"))()
  - Cópialo rápidamente en pc:
 ```
-loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua?raw=true"))()```
+loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua?raw=true"))()
+```
 - Versión actual: 1.1.4
