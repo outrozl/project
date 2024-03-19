@@ -15,7 +15,8 @@ Natural Disaster Survival
 BrookHaven
 Arsenal
 Tower of Hell
-Ninja Parkour```
+Ninja Parkour
+```
 ## Información
 - Ayuda
  - Tenemos una Tab o categoría llamada "Ayuda" donde puedes saber que significa cada cosa y también están los registros de cada actualización del script
@@ -26,7 +27,8 @@ Ninja Parkour```
  - Usamos un script para conseguir la id de juego o mundo de tu juego en el que estés para recomendarte cosas
 ```
 local id = game.PlaceId
-setclipboard(id)```
+setclipboard(id)
+```
 ## Ejecútalo
  - Cópialo rápidamente en móvil (Maten presionado el script y selecciónalo y cópialo):
 loadstring(game:HttpGet("https://github.com/outrozl/project/blob/main/FindScripts/Source.lua?raw=true"))()
