@@ -23,8 +23,8 @@ Ninja Parkour
 - ¿Qué es un script hub?
   - Un script hub es un script que almacena otros scripts para que los ejecutes rápidamente
 - Desarrollo
- - También esta en el script
- - Usamos un script para conseguir la id de juego o mundo de tu juego en el que estés para recomendarte cosas
+  - También esta en el script
+  - Usamos un script para conseguir la id de juego o mundo de tu juego en el que estés para recomendarte cosas
 ```
 local id = game.PlaceId
 setclipboard(id)
