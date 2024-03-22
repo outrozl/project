@@ -14,8 +14,6 @@ G2L["2"]["Size"] = UDim2.new(0, 35, 0, 35);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["2"]["Position"] = UDim2.new(0.9686478972434998, 0, 0.5, 0);
 G2L["2"]["Name"] = [[Main]];
-GL2["2"]["Active"] = True
-GL2["2"]["Draggable"] = True
 
 -- StarterGui.Unnamed_toggle_nev.Main.UICorner
 G2L["3"] = Instance.new("UICorner", G2L["2"]);
