@@ -14,7 +14,20 @@ local Window = Library:CreateWindow({
     Prefix = ','
 })
 
+
 local lockedcmds = true
+local correctKeyEntered = false
+
+local function verifyKey()
+    while lockedcmds do
+        wait(10)
+
+        if correctKeyEntered then
+            break
+        end
+    end
+end
+
 
 -- // Commands
 Window:AddCommand('SetPrefix', { 'New Prefix' }, 'Cambia la prefix.', function(Arguments, Speaker)
@@ -28,20 +41,23 @@ end)
 Window:AddCommand('Key ', { 'Keyinserted' }, 'Inserta la clave para acceder a los demas comandos.',
     function(Arguments, Speaker)
         if Arguments[1] == 'KS' then
+            correctKeyEntered = true
             lockedcmds = false
+            print("Key inserted is correct.")
         else
-            print("Wrong key")
+            print("Key inserted is incorrect.")
         end
     end)
 
-if lockedcmds == false then
+spawn(verifyKey)
+
+if not lockedcmds then
     Window:AddCommand('test', {}, 'test', function(Arguments, Speaker)
         Window:CreateNotification('test', 'Notification', 5)
     end)
 else
     print("Commands are locked")
 end
-
 
 -- // Functions
 Window:AddTheme('normal', {
